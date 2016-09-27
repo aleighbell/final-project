@@ -1,0 +1,57 @@
+<h1> List of Businesses </h1>
+
+
+
+<br>
+<br>
+<div class="centered">
+  <%= button_to 'Add New Business', new_business_path, method: "get", class: 'viewbutton' %>
+</div>
+
+
+<% @business.each do |business| %>
+ <div class="centered">
+
+  <table>
+    <tr>
+      <td>
+        Business Name
+      </td>
+      <td>
+        <%= business.business_name %>
+      </td>
+    </tr>
+  <tr>
+    <td>
+      Address
+    </td>
+    <td>
+    <%=   business.business_address %>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      City
+    </td>
+    <td>
+    <%=   business.city_id %>
+    </td>
+  </tr>
+
+
+
+
+  <tr>
+    <td rowspan= '3'>
+<%= button_to 'View', business, method: "get", class: 'viewbutton' %>
+    </td>
+  </tr>
+<br>
+
+
+  </table>
+
+
+ </div>
+<% end %>
