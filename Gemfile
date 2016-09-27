@@ -29,7 +29,11 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'figaro'
 
-gem 'devise'
+gem 'sorcery', '~> 0.9.1'
+
+gem 'validates_email_format_of', '~> 1.6', '>= 1.6.3'
+
+# gem 'devise'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
