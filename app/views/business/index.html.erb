@@ -35,7 +35,7 @@
       City
     </td>
     <td>
-    <%=   business.city_id %>
+    <%=   business.city.city_name %>
     </td>
   </tr>
 
@@ -44,7 +44,7 @@
 
   <tr>
     <td rowspan= '3'>
-<%= button_to 'View', business, method: "get", class: 'viewbutton' %>
+<%= button_to 'View '  + business.business_name, { action: "show", id: business.id  }, method: "get", class: 'viewbutton' %>
     </td>
   </tr>
 <br>

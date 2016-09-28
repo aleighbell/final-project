@@ -14,7 +14,7 @@ class BusinessController < ApplicationController
   end
 
   def show
-
+    @business = Business.find(params[:id])
   end
 
   def new
@@ -22,14 +22,18 @@ class BusinessController < ApplicationController
   end
 
   def create
-    @business = business.new(business_params)
+    @business = Business.new(:business_name => 'qqq', :city_id => '2'  )
+    @city = City.new(:city_name => 'qqq'  )
+    @category = Category.new(:category_name => 'qqq'  )
+    @user = User.new(:name => 'insert name'  )
 
-if @business.save
-  redirect_to root_path
-else
-  render :new
-end
+  @business.save
+  @city.save
+  @category.save
+  @user.save
+
+
+
   end
-
 
 end
