@@ -12,4 +12,9 @@ class PagesController < ApplicationController
   def signup
   end
 
+  def show
+
+  end
+
+
 end
