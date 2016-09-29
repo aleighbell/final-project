@@ -62,35 +62,7 @@ businesses = Business.create([{ category: liquor_store, business_name: 'Wine Rac
                                { category: pet_shop, business_name: 'Annex Pet Supplies' , business_address: '718 Bathurst St M5S 2R4' , city_name: Toronto }
 
                                ])
-cities = City.create([{ city_name: 'Toronto' , business_id: Toronto , category_id: Toronto },
-                      { city_name: 'Toronto' , business_id: '2', category_id: Toronto },
-                      { city_name: 'Toronto' , business_id: '3' , category_id: '2' },
-                      { city_name: 'Toronto' , business_id: '4' , category_id: '2' },
-                      { city_name: 'Toronto' , business_id: '5' , category_id: '3' },
-                      { city_name: 'Toronto' , business_id: '6' , category_id: '3' },
-                      { city_name: 'Toronto' , business_id: '7' , category_id: '3' },
-                      { city_name: 'Toronto' , business_id: '8' , category_id: '3' },
-                      { city_name: 'Toronto' , business_id: '9' , category_id: '4' },
-                      { city_name: 'Toronto' , business_id: '10' , category_id: '4' },
-                      { city_name: 'Toronto' , business_id: '11' , category_id: '5' },
-                      { city_name: 'Toronto' , business_id: '12' , category_id: '5' },
-                      { city_name: 'Toronto' , business_id: '13' , category_id: '6' },
-                      { city_name: 'Toronto' , business_id: '14' , category_id: '6' },
-                      { city_name: 'Toronto' , business_id: '15' , category_id: '7' },
-                      { city_name: 'Toronto' , business_id: '16' , category_id: '7' },
-                      { city_name: 'Toronto' , business_id: '17' , category_id: '8' },
-                      { city_name: 'Toronto' , business_id: '18' , category_id: '8' },
-                      { city_name: 'Toronto' , business_id: '19' , category_id: '9' },
-                      { city_name: 'Toronto' , business_id: '20' , category_id: '9' },
-                      { city_name: 'Toronto' , business_id: '21' , category_id: '9' },
-                      { city_name: 'Toronto' , business_id: '22' , category_id: '9' },
-                      { city_name: 'Toronto' , business_id: '23' , category_id: '10' },
-                      { city_name: 'Toronto' , business_id: '24' , category_id: '10' },
-                      { city_name: 'Toronto' , business_id: '25' , category_id: '10' },
-                      { city_name: 'Toronto' , business_id: '26' , category_id: '11' },
-                      { city_name: 'Toronto' , business_id: '27' , category_id: '11' },
-                      { city_name: 'Toronto' , business_id: '28' , category_id: '11' },
-                      ])
+cities = City.create([{ city_name: 'Toronto' , business_id: '1', category_id: '1'}])
 =======
 businesses = Business.create([{ category_id: '1', business_name: 'Wine Rack',  business_address: '472 Yonge St M4Y 1X5' ,  city_id: '1' },
                                { category_id: '2' , business_name: 'Chapters Indigo', business_address: '2300 Yonge St M4P 1E0',  city_id: '1' },
@@ -121,5 +93,3 @@ businesses = Business.create([{ category_id: '1', business_name: 'Wine Rack',  b
                                { category_id: '11' , business_name: 'Annex Pet Supplies' , business_address: '718 Bathurst St M5S 2R4' , city_id: '1' }
 
                                ])
-cities = City.create([{ city_name: 'Toronto' , business_id: '1' , category_id: '1' }])
->>>>>>> d53dd135a30fad22ba63704e2d258265e7b31d1e
