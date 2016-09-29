@@ -6,12 +6,21 @@
   <script src="https://maps.google.apis.com/maps/api/js?key=<%= ENV['google_maps_api_key'] %>&callback=initMap"
       async defer></script>
 
-
     <%#= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%#= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
+
+    <header>
+     <nav>
+       <ul>
+         <li><a href="index.html">Home</a></li>
+         <li><a id="contact-link" href="contact.html">Contact</a></li>
+         <li><a id="signin-link" href="signin.html">Sign In</a></li>
+       </ul>
+     </nav>
+   </header>
+
     <%= yield %>
   </body>
 </html>
