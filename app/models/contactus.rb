@@ -1,0 +1,2 @@
+class Contactus < ApplicationRecord
+end
