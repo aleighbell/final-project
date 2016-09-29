@@ -22,11 +22,11 @@ class PagesController < ApplicationController
   def signup
   end
 
+  def show
+  end
 
   private
   def contact_params
     params.permit(:firstname, :lastname, :email, :businessaddress, :businessname, :businessowner, :message)
   end
-
-
 end

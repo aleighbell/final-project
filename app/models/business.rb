@@ -1,6 +1,11 @@
 class Business < ApplicationRecord
-  belongs to :categories
-  belongs to :cities
-  has_and_belongs_to_many :users
-  has_many :favourites
+  belongs_to :categories
+  belongs_to :cities
+  belongs_to :users
+  has_many   :favourites
 end
+
+def geolocation
+  geocoded_by :address
+  after_validation :geocode
+end   
