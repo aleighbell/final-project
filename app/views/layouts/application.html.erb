@@ -3,6 +3,7 @@
   <head>
     <title>Bestfriendly</title>
     <%= csrf_meta_tags %>
+
   <script src="https://maps.google.apis.com/maps/api/js?key=<%= ENV['google_maps_api_key'] %>&callback=initMap"
       async defer></script>
 
@@ -14,9 +15,13 @@
     <header>
      <nav>
        <ul>
-         <li><a href="index.html">Home</a></li>
-         <li><a id="contact-link" href="contact.html">Contact</a></li>
-         <li><a id="signin-link" href="signin.html">Sign In</a></li>
+         <% if current_user %>
+         <li><span><%= current_user.name %></span></li>
+         <li><%= link_to 'Log Out', log_out_path, method: :delete %></li>
+         <% else %>
+         <li>  <%= link_to "Sign up", sign_up_path %> </li>
+         <li>  <%= link_to "log in", log_in_path %></li>
+         <% end %>
        </ul>
      </nav>
    </header>
