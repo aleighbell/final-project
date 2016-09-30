@@ -13,7 +13,7 @@
   <body>
 
     <header>
-<<<<<<< HEAD
+
           <div class="logo">
           <a href="index.html"><%= image_tag("logo.png", class:"logoimage") %></a>
           <p class="slogan">Built for dog owners by dog owners</p>
@@ -85,20 +85,7 @@
 
 
 
-=======
-     <nav>
-       <ul>
-         <% if current_user %>
-         <li><span><%= current_user.name %></span></li>
-         <li><%= link_to 'Log Out', log_out_path, method: :delete %></li>
-         <% else %>
-         <li>  <%= link_to "Sign up", sign_up_path %> </li>
-         <li>  <%= link_to "log in", log_in_path %></li>
-         <% end %>
-       </ul>
-     </nav>
-   </header>
->>>>>>> 8e2f1e974472ae7ba64fcce5ee580d369cbcaf1c
+
 
     <%= yield %>
   </body>
