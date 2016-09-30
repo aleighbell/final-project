@@ -13,14 +13,14 @@
   <body>
 
     <header>
-<<<<<<< HEAD
+
           <div class="logo">
           <a href="index.html"><%= image_tag("logo.png", class:"logoimage") %></a>
           <p class="slogan">Built for dog owners by dog owners</p>
           <div>
           <nav>
             <ul>
-              <li><%= link_to "Home", "/" %></li>
+              <li class = 'nav'><%= link_to "Home", "/" %></li>
               <div class="dropdown">
                 <button class="dropbtn">Business</button>
                 <div class="dropdown-content">
@@ -37,9 +37,9 @@
                   <a href="#" class="ps">Pet Shop</a>
                 </div>
               </div>
-              <li><%= link_to "Contact Us", "contact-us", id:"contact-link" %></li>
-              <li><%= link_to "About Us", "about_us" %></li>
-              <li><a id="signin-link" href="signin.html">Sign In</a></li>
+              <li class = 'nav'><%= link_to "Contact Us", "contact-us", id:"contact-link" %></li>
+              <li class = 'nav' ><%= link_to "About Us", "about_us" %></li>
+              <li class = 'nav'><a id="signin-link" href="signin.html">Sign In</a></li>
             </ul>
           </nav>
           </div>
@@ -84,21 +84,6 @@
 
 
 
-
-=======
-     <nav>
-       <ul>
-         <% if current_user %>
-         <li><span><%= current_user.name %></span></li>
-         <li><%= link_to 'Log Out', log_out_path, method: :delete %></li>
-         <% else %>
-         <li>  <%= link_to "Sign up", sign_up_path %> </li>
-         <li>  <%= link_to "log in", log_in_path %></li>
-         <% end %>
-       </ul>
-     </nav>
-   </header>
->>>>>>> 8e2f1e974472ae7ba64fcce5ee580d369cbcaf1c
 
     <%= yield %>
   </body>
