@@ -1,5 +1,4 @@
 class Favourite < ApplicationRecord
   belongs_to :user
-  has_many :businesses
-  has_many :cities
+  belongs_to :business
 end
