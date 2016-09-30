@@ -6,20 +6,83 @@
   <script src="https://maps.google.apis.com/maps/api/js?key=<%= ENV['google_maps_api_key'] %>&callback=initMap"
       async defer></script>
 
-    <%#= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%#= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
 
     <header>
-     <nav>
-       <ul>
-         <li><a href="index.html">Home</a></li>
-         <li><a id="contact-link" href="contact.html">Contact</a></li>
-         <li><a id="signin-link" href="signin.html">Sign In</a></li>
-       </ul>
-     </nav>
-   </header>
+          <div class="logo">
+          <a href="index.html"><%= image_tag("logo.png", class:"logoimage") %></a>
+          <p class="slogan">Built for dog owners by dog owners</p>
+          <div>
+          <nav>
+            <ul>
+              <li><%= link_to "Home", "/" %></li>
+              <div class="dropdown">
+                <button class="dropbtn">Business</button>
+                <div class="dropdown-content">
+                  <a href="#" class="ls">Liquor Store</a>
+                  <a href="#" class="bs">Book Store</a>
+                  <a href="#" class="ds">Department Store</a>
+                  <a href="#" class="hs">Hardware Store</a>
+                  <a href="#" class="ta">Travel Agent</a>
+                  <a href="#" class="gs">Garden Store</a>
+                  <a href="#" class="eye">Eyewear</a>
+                  <a href="#" class="ms">Music Store</a>
+                  <a href="#" class="bank">Bank</a>
+                  <a href="#" class="sc">Service Canada</a>
+                  <a href="#" class="ps">Pet Shop</a>
+                </div>
+              </div>
+              <li><%= link_to "Contact Us", "contact-us", id:"contact-link" %></li>
+              <li><%= link_to "About Us", "about_us" %></li>
+              <li><a id="signin-link" href="signin.html">Sign In</a></li>
+            </ul>
+          </nav>
+          </div>
+        </header>
+
+        <div class="modal">
+
+            <form class="contactus" action="/contact-us" method="post">
+                <button type="button" class="close">x</button>
+                <input type="text" class="formfield" name="FirstName" placeholder="FirstName">
+                <input type="text" class="formfield" name="LastName" placeholder="LastName">
+                <input type="text" class="formfield" name="E-Mail" placeholder="E-Mail">
+                <input type="text" class="formfield" name="BusinessName" placeholder="BusinessName">
+                <input type="text" class="formfield" name="BusinessAddress" placeholder="BusinessAddress">
+                <input type="textarea" class="formfieldmessage" name="Message" placeholder="Message">
+                <input type="submit" class="submit"/>
+            </form>
+        </div>
+
+        <div class="signinsignup">
+  <div class="regsignin">
+    <form class="signinform">
+        <button type="button" class="close">x</button>
+        <input type="text" name="user" placeholder="Username">
+        <input type="password" name="pass" placeholder="Password">
+        <button type="button" class="signinsubmit">Submit</button>
+    </form>
+  </div>
+
+<p class="bfmain">New to Best Friendly? Register Now</p>
+
+<div class="fbsigin">
+  <p> Log in with Twitter account </p>
+  <form class="fbform">
+    <input type="text" name="user" placeholder="Username">
+      <input type="password" name="pass" placeholder="Password">
+      <button type="button" class="fbsubmit">Submit</button>
+  </form>
+</div>
+
+</div>
+
+
+
+
 
     <%= yield %>
   </body>

@@ -24,7 +24,7 @@ businesses = Business.create([{ category_id: '1', business_name: 'Wine Rack',  b
                                { category_id: '2' , business_name: 'Book City' , business_address: '2354 Bloor St West M6S 1P3', city_id: '1' },
                                { category_id: '3' , business_name: 'Holt Renfrew' , business_address: '50 Bloor St West M4W 1A1',  city_id: '1' },
                                { category_id: '3' , business_name: 'Homesense' , business_address: '82 Spadina ave M5V 2J3' , city_id: '1' },
-                               { category_id: '3' , business_name: 'Marshalls' , business_address: '126 John St M9M 1K1' , city_id: '1' },
+                               { category_id: '3' , Fbusiness_name: 'Marshalls' , business_address: '126 John St M9M 1K1' , city_id: '1' },
                                { category_id: '3' , business_name: 'Winners' , business_address: '10 Dundas St East M5b 4G9' , city_id: '1' },
                                { category_id: '4' , business_name: 'Homehardware' , business_address: '432 Bloor St West M5S 1X5' , city_id: '1' },
                                { category_id: '4' , business_name: 'Canadian Tire' , business_address: '839 Yonge St M4W 2H2' , city_id: '1' },
