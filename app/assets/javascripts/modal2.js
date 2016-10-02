@@ -1,6 +1,3 @@
-
-console.log("infile")
-
 $(function() {
 console.log("insidefile")
 //contact us modal
@@ -27,5 +24,24 @@ console.log("insidefile")
     $('.signinsignup').fadeOut('slow')
 
   });
+
+
+  // $('a').hover(function(){
+  //      $(this).css({"color":"red"}); , function() {
+  //   $( this ).css({ "color":"white" });
+  // }
+  // });
+
+  $( "a, .dropbtn" ).hover(
+  function() {
+      $(this).css({"color":"black"});
+  }, function() {
+      $(this).css({"color":"white"});
+  }
+);
+
+
+
+
 
 });

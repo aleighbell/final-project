@@ -17,8 +17,13 @@ categories = Category.create([{ category_name: 'Liquor store' },
                               { category_name: 'Bank' },
                               { category_name: 'Service Canada' },
                               { category_name: 'Pet shop' }
+                              { category_name: 'Cafe'}
                              ])
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 21f6e2589d01150f6dba4f98d5e545d4d95f880a
 liquor_store =     Category.find_by(category_name:  'Liquor store')
 book_store =       Category.find_by(category_name:  'Book store')
 department_store = Category.find_by(category_name:  'Department store')

@@ -13,7 +13,7 @@ get 'business' => 'pages#business'
 get 'business_index' => 'business#index'
 resources :business
 
-get 'offleashtoronto' => 'pages#offleashtoronto'
+get 'offleash_toronto' => 'pages#offleash_toronto'
 
 
 get '/sign_up', to: 'users#new', as: :sign_up
