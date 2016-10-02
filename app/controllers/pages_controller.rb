@@ -29,4 +29,7 @@ class PagesController < ApplicationController
   def contact_params
     params.permit(:firstname, :lastname, :email, :businessaddress, :businessname, :businessowner, :message)
   end
+
+  def offleash_toronto
+  end  
 end
