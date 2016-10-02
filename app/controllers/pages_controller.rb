@@ -32,5 +32,5 @@ class PagesController < ApplicationController
   end
 
   def offleash_toronto
-  end  
+  end
 end

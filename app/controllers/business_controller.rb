@@ -1,6 +1,9 @@
 class BusinessController < ApplicationController
 
   def index
+    if params[:search_address]
+      @businesses = Business.near(params [:search_address])
+    else
       @business = Business.all
   end
 
@@ -15,6 +18,7 @@ class BusinessController < ApplicationController
 
   def show
     @business = Business.find(params[:id])
+    @nearby_businesses = @business.nearbys
   end
 
   def new

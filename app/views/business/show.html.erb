@@ -6,3 +6,13 @@ Address: <%= @business.business_address %><br>
 City:  <%=   @business.city_id %>
 
 </div>
+
+<h4>Nearby businesses</h4>
+<ol>
+<% @nearby_restaurants.each do |business| %>
+   <li>
+     <p><%= business.name %></p>
+     <p><%= business.address %></p>
+   </li>
+ <% end %>
+</ol>

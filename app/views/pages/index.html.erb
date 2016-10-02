@@ -3,6 +3,13 @@
 
 <html>
 <h1>Please find all your dog friendly businesses in one dog friendly place!</h1>
+
+<h2>Find businesses near me:</h2>
+<%= form_tag business_path, method: :get do %>
+  <%= text_field_tag :search_address, params[:search_address], placeholder: "eg.134 Yonge St Toronto" %>
+  <%= submit_tag "GO!" %>
+<% end %>
+
   <head>
     <title>Geolocation</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
@@ -62,4 +69,4 @@
   </body>
 </html>
 
-<!-- code copied from google geolocation API
+<!-- the geocode map is from google geolocation API
