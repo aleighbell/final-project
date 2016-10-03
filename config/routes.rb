@@ -13,8 +13,8 @@ get 'business' => 'pages#business'
 get 'business_index' => 'business#index'
 resources :business
 
+resources :favourites
 get 'offleash_toronto' => 'pages#offleash_toronto'
-
 
 get '/sign_up', to: 'users#new', as: :sign_up
 get '/log_in', to: 'sessions#new', as: :log_in

@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20161003200705) do
   end
 
   create_table "cities", force: :cascade do |t|
-    t.string   "city"
+    t.string   "city_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
