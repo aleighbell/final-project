@@ -1,12 +1,7 @@
- <!Doctype html>
 
-
-<html>
-<h1>Please find all your dog friendly businesses in one dog friendly place!</h1>
-
-<h2>Find businesses near me:</h2>
+<h3>Find businesses near me:</h3>
 <%= form_tag business_path, method: :get do %>
-  <%= text_field_tag :search_address, params[:search_address], placeholder: "eg.134 Yonge St Toronto" %>
+  <%= text_field_tag :search_address, params[:search_address], placeholder: "134 Yonge St Toronto" %>
   <%= submit_tag "GO!" %>
 <% end %>
 
