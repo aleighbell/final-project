@@ -41,7 +41,7 @@
 
                   <% if current_user %>
                   <li class='nav'><span>Logged in as: <%= current_user.name %></span></li>
-                  <li class='nav'><%= link_to 'Log Out', log_out_path, method: :delete %></li>
+                  <li class='nav'><%= link_to 'Log Out', log_out_path, method: :delet %></li>
                   <% else %>
                   <li class='nav'>  <%= link_to "Sign up", sign_up_path %> </li>
                   <li class='nav'>  <%= link_to "Log in", log_in_path %></li>
