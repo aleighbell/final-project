@@ -40,6 +40,50 @@ console.log("insidefile")
   }
 );
 
+// change hearts
+
+// $('.full_heart').on('click', function() {
+//   console.log('you clicked')
+//   $(this).removeClass('full_heart');
+//   $(this).addClass('empty_heart');
+// console.log('you added empty heart class')
+// });
+
+
+
+$('.empty_heart').on('click', function() {
+  console.log('you clicked')
+
+  if($(this).hasClass('empty_heart'))
+            {
+                $(this).removeClass('empty_heart');
+                $(this).addClass('full_heart');
+            }
+            else
+            {
+                $(this).addClass('empty_heart');
+                $(this).removeClass('full_heart');
+            }
+console.log('you added full heart class')
+});
+
+
+
+
+
+
+
+
+          // if($(this).hasClass('empty_heart'))
+          //   {
+          //       $(this).removeClass('full_heart');
+          //   }
+          //   else
+          //   {
+          //       $(this).addClass('empty_heart');
+          //   }
+          //
+
 
 
 
