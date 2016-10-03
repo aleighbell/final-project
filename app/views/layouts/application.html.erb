@@ -12,16 +12,25 @@
   </head>
   <body>
 
-    
+
      <nav>
        <ul>
+          <li><%= link_to "Home", welcome_path %> </li>
+          <li><%= link_to "About Us", about_us_path %> </li>
+          <li><%= link_to "Contact Us", contact_us_path %> </li>
+          <li><%= link_to "Business", business_index_path %> </li>
+
          <% if current_user %>
-         <li><span><%= current_user.name %></span></li>
+         <li><span>Logged in as: <%= current_user.name %></span></li>
          <li><%= link_to 'Log Out', log_out_path, method: :delete %></li>
          <% else %>
          <li>  <%= link_to "Sign up", sign_up_path %> </li>
-         <li>  <%= link_to "log in", log_in_path %></li>
+         <li>  <%= link_to "Log in", log_in_path %></li>
          <% end %>
+
+
+
+
        </ul>
      </nav>
    </header>
