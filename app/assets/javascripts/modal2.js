@@ -58,11 +58,19 @@ $('.empty_heart').on('click', function() {
             {
                 $(this).removeClass('empty_heart');
                 $(this).addClass('full_heart');
+
+                $.ajax({
+                         url: '/favourites',
+                         method: 'post',
+                         data: {user_id: 'user_id', business_id: 'business_id' },
+                       });
             }
+
             else
             {
                 $(this).addClass('empty_heart');
                 $(this).removeClass('full_heart');
+
             }
 console.log('you added full heart class')
 });

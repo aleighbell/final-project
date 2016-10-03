@@ -26,16 +26,19 @@ class BusinessController < ApplicationController
   end
 
   def create
-    @business = Business.new(:business_name => 'qqq', :city_id => '2'  )
+    @business = Business.new(favourite_params)
     @city = City.new(:city_name => 'qqq'  )
     @category = Category.new(:category_name => 'qqq'  )
     @user = User.new(:name => 'insert name'  )
-
   @business.save
   @city.save
   @category.save
   @user.save
 
   end
+
+    def update
+
+    end
 
 end

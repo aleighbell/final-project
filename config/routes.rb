@@ -12,7 +12,7 @@ get 'business' => 'pages#business'
 #get 'signup' => 'pages#signup'
 get 'business_index' => 'business#index'
 resources :business
-
+resources :favourites
 get '/sign_up', to: 'users#new', as: :sign_up
 get '/log_in', to: 'sessions#new', as: :log_in
 get '/log_out', to: 'sessions#destroy', as: :log_out
