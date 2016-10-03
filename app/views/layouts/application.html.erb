@@ -51,15 +51,17 @@
         </header>
 
         <div class="modal">
-
             <form class="contactus" action="/contact-us" method="post">
                 <button type="button" class="close">x</button>
-                <input type="text" class="formfield" name="FirstName" placeholder="FirstName">
-                <input type="text" class="formfield" name="LastName" placeholder="LastName">
-                <input type="text" class="formfield" name="E-Mail" placeholder="E-Mail">
-                <input type="text" class="formfield" name="BusinessName" placeholder="BusinessName">
-                <input type="text" class="formfield" name="BusinessAddress" placeholder="BusinessAddress">
-                <input type="textarea" class="formfieldmessage" name="Message" placeholder="Message">
+                <p>
+                  <%= hidden_field_tag request_forgery_protection_token.to_s, form_authenticity_token %>
+                </p>
+                <input type="text" id="first" name="FirstName" placeholder="FirstName">
+                <input type="text" id="last" name="LastName" placeholder="LastName">
+                <input type="text" id="email" name="E-Mail" placeholder="E-Mail">
+                <input type="text" id="bname" name="BusinessName" placeholder="BusinessName">
+                <input type="text" id="baddress" name="BusinessAddress" placeholder="BusinessAddress">
+                <input type="textarea" id="message" name="Message" placeholder="Message">
                 <input type="submit" class="submit"/>
             </form>
         </div>

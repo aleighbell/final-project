@@ -1,5 +1,5 @@
-$(function() {
-console.log("insidefile")
+$(document).on('turbolinks:load', function(){
+
 //contact us modal
 
   $('#contact-link').on('click', function(eventobject) {
@@ -25,6 +25,31 @@ console.log("insidefile")
 
   });
 
+//submit button
+
+$('.submit').on('click', function(eventobject) { //SUBMIT BUTTON
+  eventobject.preventDefault();
+
+  $.ajax({
+    url: '/contact-us',
+    data: {
+      firstname: $('#first').val(), // FORM INPUTS
+      lastname: $('#last').val(),
+      email: $('#email').val(),
+      businessname: $('#bname').val(),
+      businessaddress: $('#baddress').val(),
+      message: $('#message').val(),
+    },
+    method: 'POST',
+    dataType: 'json'
+  }).done(function(data){
+    alert('Form Submitted');
+  });
+})
+
+$('.submit').on('click', function(eventobject) {
+  $('.modal').fadeOut('slow')
+})
 
   // $('a').hover(function(){
   //      $(this).css({"color":"red"}); , function() {
@@ -39,6 +64,50 @@ console.log("insidefile")
       $(this).css({"color":"white"});
   }
 );
+
+// change hearts
+
+// $('.full_heart').on('click', function() {
+//   console.log('you clicked')
+//   $(this).removeClass('full_heart');
+//   $(this).addClass('empty_heart');
+// console.log('you added empty heart class')
+// });
+
+
+
+$('.empty_heart').on('click', function() {
+  console.log('you clicked')
+
+  if($(this).hasClass('empty_heart'))
+            {
+                $(this).removeClass('empty_heart');
+                $(this).addClass('full_heart');
+            }
+            else
+            {
+                $(this).addClass('empty_heart');
+                $(this).removeClass('full_heart');
+            }
+console.log('you added full heart class')
+});
+
+
+
+
+
+
+
+
+          // if($(this).hasClass('empty_heart'))
+          //   {
+          //       $(this).removeClass('full_heart');
+          //   }
+          //   else
+          //   {
+          //       $(this).addClass('empty_heart');
+          //   }
+          //
 
 
 
