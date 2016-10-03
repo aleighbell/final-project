@@ -4,7 +4,9 @@ class Business < ApplicationRecord
   belongs_to :city
 end
 
-def geolocation
-  geocoded_by :address
-  after_validation :geocode
+#  geocoded_by :address
+#  after_validation :geocode
+
+def display_distance_to(current_position)
+  distance_to(current_position, :km).round(3)
 end

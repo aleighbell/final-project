@@ -1,5 +1,5 @@
-$(function() {
-console.log("insidefile")
+$(document).on('turbolinks:load', function(){
+
 //contact us modal
 
   $('#contact-link').on('click', function(eventobject) {
@@ -25,6 +25,31 @@ console.log("insidefile")
 
   });
 
+//submit button
+
+$('.submit').on('click', function(eventobject) { //SUBMIT BUTTON
+  eventobject.preventDefault();
+
+  $.ajax({
+    url: '/contact-us',
+    data: {
+      firstname: $('#first').val(), // FORM INPUTS
+      lastname: $('#last').val(),
+      email: $('#email').val(),
+      businessname: $('#bname').val(),
+      businessaddress: $('#baddress').val(),
+      message: $('#message').val(),
+    },
+    method: 'POST',
+    dataType: 'json'
+  }).done(function(data){
+    alert('Form Submitted');
+  });
+})
+
+$('.submit').on('click', function(eventobject) {
+  $('.modal').fadeOut('slow')
+})
 
   // $('a').hover(function(){
   //      $(this).css({"color":"red"}); , function() {

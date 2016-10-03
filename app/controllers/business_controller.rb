@@ -1,10 +1,18 @@
 class BusinessController < ApplicationController
 
   def index
-      @business = Business.all
-      @business = Business.order("business_name").page(params[:page]).per(5)
-
+    @business = Business.all
+    @business = Business.order("business_name").page(params[:page]).per(5)
+   #
+  #   if params[:search_address]
+  #    @businesses = Business.near(params[:search_address])
+  #  elsif params[:latitude] && params[:longtitude]
+  #     @businesses = Business.near([params[:latitude], params[:longtitude])
+  #  else
+  #
+  #   end
   end
+
 
   def contact_us
   end
@@ -17,7 +25,9 @@ class BusinessController < ApplicationController
 
   def show
 
-    @business_find = Business.find(params[:id])
+    @business = Business.find(params[:id])
+#    @nearby_businesses = @business.nearbys
+
 
   end
 
@@ -26,8 +36,10 @@ class BusinessController < ApplicationController
   end
 
   def create
+
     @business = Business.new(favourite_params)
     @city = City.new(:city_name => 'qqq'  )
+
     @category = Category.new(:category_name => 'qqq'  )
     @user = User.new(:name => 'insert name'  )
   @business.save

@@ -5,14 +5,17 @@ resources :sessions, only: [:new, :create, :destroy]
 
 root 'pages#index'
 get 'welcome' => 'pages#index'
-post 'contact-us' => 'pages#contact_save'
-get 'contact-us' => 'pages#contact_us'
+post 'contact_us' => 'pages#contact_save'
+get 'contact_us' => 'pages#contact_us'
 get 'about_us' => 'pages#about_us'
 get 'business' => 'pages#business'
 #get 'signup' => 'pages#signup'
 get 'business_index' => 'business#index'
 resources :business
+
 resources :favourites
+get 'offleash_toronto' => 'pages#offleash_toronto'
+
 get '/sign_up', to: 'users#new', as: :sign_up
 get '/log_in', to: 'sessions#new', as: :log_in
 get '/log_out', to: 'sessions#destroy', as: :log_out
