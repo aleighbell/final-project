@@ -43,8 +43,12 @@ $('.submit').on('click', function(eventobject) { //SUBMIT BUTTON
     method: 'POST',
     dataType: 'json'
   }).done(function(data){
-    alert('Submitted');
+    alert('Form Submitted');
   });
+})
+
+$('.submit').on('click', function(eventobject) {
+  $('.modal').fadeOut('slow')
 })
 
   // $('a').hover(function(){
