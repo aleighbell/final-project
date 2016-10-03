@@ -6,20 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' , name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-categories = Category.create!([{category_name: 'Liquor store' },
-                              {category_name: 'Book store' },
-                              {category_name: 'Department store' },
-                              {category_name: 'Hardware store' },
-                              {category_name: 'Travel agent' },
-                              {category_name: 'Garden centre' },
-                              {category_name: 'Eyewear' },
-                              {category_name: 'Music store' },
-                              {category_name: 'Bank' },
-                              {category_name: 'Service Canada' },
-                              {category_name: 'Pet shop' },
-                              {category_name: 'Cafe' }
-])
-
 categories = Category.find_by liquor_store = {category_name:'Liquor store' },
                               book_store = {category_name:'Book store' },
                               department_store = {category_name:'Department store' },
@@ -34,11 +20,9 @@ categories = Category.find_by liquor_store = {category_name:'Liquor store' },
                               pet_shop = {category_name:'Pet shop' },
                               cafe = {category_name:'Cafe' }
 
-cities = City.create!([{city:'Toronto' }])
-
 cities = City.find_by toronto = {city:'Toronto' }
 
-businesses = Business.create!([{category_name: liquor_store, business_name: 'Wine Rack', business_address: '472 Yonge St M4Y 1X5', city: 'Toronto' },
+businesses = Business.create([{category_name: liquor_store, business_name: 'Wine Rack', business_address: '472 Yonge St M4Y 1X5', city: 'Toronto' },
                               {category_name: book_store, business_name: 'Chapters Indigo', business_address: '2300 Yonge St M4P 1E0', city: 'Toronto' },
                               {category_name: book_store, business_name: 'Book City', business_address: '2354 Bloor St West M6S 1P3', city: 'Toronto' },
                               {category_name: department_store, business_name: 'Holt Renfrew', business_address: '50 Bloor St West M4W 1A1', city: 'Toronto' },

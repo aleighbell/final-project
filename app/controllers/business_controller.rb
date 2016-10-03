@@ -7,14 +7,11 @@ class BusinessController < ApplicationController
       @businesses = Business.near([params[:latitude], params[:longtitude])
    else
       @business = Business.all
-<<<<<<< HEAD
    end
 end
-=======
-      @business = Business.order("business_name").page(params[:page]).per(5)
 
+      @business = Business.order("business_name").page(params[:page]).per(5)
   end
->>>>>>> a13764c5c1231f9fa29eb755bb2472d8174eb319
 
   def contact_us
   end
@@ -26,14 +23,14 @@ end
   end
 
   def show
-<<<<<<< HEAD
+
     @business = Business.find(params[:id])
 #    @nearby_businesses = @business.nearbys
-=======
+
 
     @business_find = Business.find(params[:id])
 
->>>>>>> a13764c5c1231f9fa29eb755bb2472d8174eb319
+
   end
 
   def new
