@@ -1,5 +1,12 @@
-$(document).on('turbolinks:load', function(){
 
+$( document ).ready(function() {
+    console.log( "ready!" );
+
+
+
+
+// $(document).on(function(){
+console.log("testing")
 //contact us modal
 
   $('#contact-link').on('click', function(eventobject) {
@@ -87,7 +94,7 @@ $('.empty_heart').on('click', function() {
                 $.ajax({
                          url: '/favourites',
                          method: 'post',
-                         data: {user_id: 'user_id', business_id: 'business_id' },
+                         data: {user_id: 'user_id', business_id: $(this).data('business-id') },
                        });
             }
 

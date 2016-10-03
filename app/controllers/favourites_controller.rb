@@ -5,8 +5,9 @@ def new
   redirect_to create
 end
   def create
-
     @favourite = Favourite.new(favourites_params)
+    # byebug
+    @favourite.user = current_user
     if @favourite.save
     puts "***********************"
     puts params[:user_id]

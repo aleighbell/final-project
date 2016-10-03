@@ -18,8 +18,11 @@
       <td>
         <%= business.business_name %>
       </td>
-       <td rowspan="3" class="empty_heart">
-         <%= link_to 'save favourite', favourites_path, method: 'POST'%>
+       <td rowspan="3" class="empty_heart" data-business-id="<%= business.id %>" >
+
+         <!-- <div class="empty_heart">
+           heart
+         </div> -->
        </td>
 
     </tr>
