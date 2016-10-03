@@ -2,6 +2,8 @@ class BusinessController < ApplicationController
 
   def index
       @business = Business.all
+      @business = Business.order("business_name").page(params[:page]).per(5)
+
   end
 
   def contact_us
@@ -14,7 +16,9 @@ class BusinessController < ApplicationController
   end
 
   def show
-    @business = Business.find(params[:id])
+
+    @business_find = Business.find(params[:id])
+
   end
 
   def new
@@ -31,8 +35,6 @@ class BusinessController < ApplicationController
   @city.save
   @category.save
   @user.save
-
-
 
   end
 
