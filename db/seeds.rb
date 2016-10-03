@@ -1,3 +1,4 @@
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -20,19 +21,6 @@ categories = Category.create!([{category_name: 'Liquor store' },
                               {category_name: 'Cafe' }
 ])
 
-categories = Category.find_by liquor_store = {category_name:'Liquor store' },
-                              book_store = {category_name:'Book store' },
-                              department_store = {category_name:'Department store' },
-                              hardware_store =   {category_name:'Hardware store' },
-                              travel_agent = {category_name:'Travel agent' },
-                              garden_centre = {category_name:'Garden centre' },
-                              eyewear = {category_name:'Eyewear' },
-                              music_store = {category_name:'Music store' },
-                              bank = {category_name:'Bank' },
-                              service_ontario =  {category_name:'Service Ontario' },
-                              service_canada =  {category_name:'Service Canada' },
-                              pet_shop = {category_name:'Pet shop' },
-                              cafe = {category_name:'Cafe' }
 
 cities = City.create!([{city:'Toronto' }])
 
