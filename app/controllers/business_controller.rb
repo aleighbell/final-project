@@ -1,10 +1,20 @@
 class BusinessController < ApplicationController
 
   def index
+    if params[:search_address]
+     @businesses = Business.near(params[:search_address])
+   elsif params[:latitude] && params[:longtitude]
+      @businesses = Business.near([params[:latitude], params[:longtitude])
+   else
       @business = Business.all
+<<<<<<< HEAD
+   end
+end
+=======
       @business = Business.order("business_name").page(params[:page]).per(5)
 
   end
+>>>>>>> a13764c5c1231f9fa29eb755bb2472d8174eb319
 
   def contact_us
   end
@@ -16,9 +26,14 @@ class BusinessController < ApplicationController
   end
 
   def show
+<<<<<<< HEAD
+    @business = Business.find(params[:id])
+#    @nearby_businesses = @business.nearbys
+=======
 
     @business_find = Business.find(params[:id])
 
+>>>>>>> a13764c5c1231f9fa29eb755bb2472d8174eb319
   end
 
   def new
@@ -27,7 +42,7 @@ class BusinessController < ApplicationController
 
   def create
     @business = Business.new(:business_name => 'qqq', :city_id => '2'  )
-    @city = City.new(:city_name => 'qqq'  )
+    @city = City.new(:city => 'qqq'  )
     @category = Category.new(:category_name => 'qqq'  )
     @user = User.new(:name => 'insert name'  )
 

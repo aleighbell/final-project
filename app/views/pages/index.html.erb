@@ -1,8 +1,10 @@
- <!Doctype html>
 
+<h3>Find businesses near me:</h3>
+<%= form_tag business_path, method: :get do %>
+  <%= text_field_tag :search_address, params[:search_address], placeholder: "134 Yonge St Toronto" %>
+  <%= submit_tag "GO!" %>
+<% end %>
 
-<html>
-<h1>Please find all your dog friendly businesses in one dog friendly place!</h1>
   <head>
     <title>Geolocation</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
@@ -38,7 +40,7 @@
             };
 
             infoWindow.setPosition(pos);
-            infoWindow.setContent('Location found.');
+            infoWindow.setContent('You are here!');
             map.setCenter(pos);
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
@@ -62,4 +64,4 @@
   </body>
 </html>
 
-<!-- code copied from google geolocation API
+<!-- the geocode map is from google geolocation API
