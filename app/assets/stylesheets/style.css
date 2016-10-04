@@ -3,6 +3,7 @@
 body {
   background-color: #f7f7f7;
 }
+
 .logo {
     background-color: #6ab47b;
     text-align: center;
@@ -297,4 +298,8 @@ button.fbsubmit {
   background-size: 60%;
   cursor: pointer;
   border-color: black;
+}
+
+#map {
+  height: 100%;
 }

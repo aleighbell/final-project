@@ -2,8 +2,11 @@
   <head>
     <title>Bestfriendly</title>
     <%= csrf_meta_tags %>
+
 <%= stylesheet_link_tag    'application', media: 'all'%>
-<%#= javascript_include_tag 'application' %>
+<%= javascript_include_tag 'application' %>
+
+
 
 
   <script src="https://maps.google.apis.com/maps/api/js?key=<%= ENV['google_maps_api_key'] %>&callback=initMap"
@@ -13,9 +16,10 @@
   <body>
 
     <header>
-
-          <div class="logo">
-          <div>
+      <div class="logo">
+        <a href="index.html"><%=image_tag"logo.png", class:"logoimage" %></a>
+        <p class="slogan">Built for dog owners by dog owners</p>
+      <div>
           <nav>
             <ul>
               <li class = 'nav'><%= link_to "Home", "/" %></li>
@@ -37,19 +41,38 @@
                   <a href="#" class="cafe">Cafe</a>
                 </div>
               </div>
+<<<<<<< HEAD
+              <li class = 'nav'><%= link_to "Contact Us", "contact_us", id:"contact-link" %></li>
+=======
 
-              <li><%= link_to "Contact Us", "contact-us", id:"contact-link" %></li>
+                   <li class='nav'><%= link_to "About Us", about_us_path %> </li>
+                   <li class='nav'><%= link_to "Contact Us", contact_us_path, id: "contact-link"  %> </li>
+                   <li class='nav'><%= link_to "Offleash Toronto", offleash_toronto_path %></li>
+
+                  <% if current_user %>
+                  <li class='nav'><span>Logged in as: <%= current_user.name %></span></li>
+                  <li class='nav'><%= link_to 'Log Out', log_out_path %></li>
+                  <% else %>
+                  <li class='nav'>  <%= link_to "Sign up", sign_up_path %> </li>
+                  <li class='nav'>  <%= link_to "Log in", log_in_path %></li>
+                  <% end %>
+
+                </ul>
+              </nav>
+
+              <!-- <li><%= link_to "Contact Us", "contact-us", id:"contact-link" %></li>
               <li><%= link_to "About Us", "about_us" %></li>
               <li><%= link_to "Offleash toronto", "offleashtoronto" %></li>
-              <li><a id="signin-link" href="signin.html">Sign In</a></li>
+              <li><a id="signin-link" href="signin.html">Sign In</a></li> -->
 
-              <li class = 'nav'><%= link_to "Contact Us", "contact-us", id:"contact-link" %></li>
+              <!-- <li class = 'nav'><%= link_to "Contact Us", "contact-us", id:"contact-link" %></li>
+>>>>>>> 4f7425d39ef63b88c9bdb6ddd0ac998214e29b90
               <li class = 'nav'><%= link_to "About Us", "about_us" %></li>
               <li class = 'nav'><%= link_to "Offleash Toronto", "offleash_toronto" %></li>
-              <li class = 'nav'><a id="signin-link" href="signin.html">Sign In</a></li>
+              <li class = 'nav'><a id="signin-link" href="signin.html">Sign In</a></li> -->
 
-            </ul>
-          </nav>
+            <!-- </ul> -->
+          <!-- </nav> -->
           </div>
         </header>
 
@@ -91,7 +114,6 @@
 </div>
 
 </div>
-
     <%= yield %>
   </body>
 </html>
