@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20160930210120) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.float    "latitude"
-    t.float    "longtitude"
+    t.float    "longitude"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20160930210120) do
   end
 
   create_table "cities", force: :cascade do |t|
-    t.string   "city_name"
+    t.string   "city"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

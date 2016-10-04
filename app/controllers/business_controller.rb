@@ -1,19 +1,16 @@
 class BusinessController < ApplicationController
 
   def index
-<<<<<<< HEAD
-    if params[:search_address]
-     @businesses = Business.near(params[:search_address])
-   elsif params[:latitude] && params[:longtitude]
-      @businesses = Business.near([params[:latitude], params[:longtitude])
-   else
-      @business = Business.all
-   end
-end
 
-      @business = Business.order("business_name").page(params[:page]).per(5)
-  end
-=======
+  #  if params[:search_address]
+  #   @businesses = Business.near(params[:search_address])
+  # elsif params[:latitude] && params[:longtitude]
+  #    @businesses = Business.near([params[:latitude], params[:longtitude])
+#   else
+  #    @business = Business.all
+#   end
+#end
+
     @business = Business.all
     @business = Business.order("business_name").page(params[:page]).per(5)
    #
@@ -25,8 +22,6 @@ end
   #
   #   end
   end
-
->>>>>>> master
 
   def contact_us
   end
@@ -41,16 +36,7 @@ end
 
     @business = Business.find(params[:id])
 #    @nearby_businesses = @business.nearbys
-<<<<<<< HEAD
 
-=======
->>>>>>> master
-
-
-<<<<<<< HEAD
-
-=======
->>>>>>> master
   end
 
   def new
@@ -72,7 +58,5 @@ end
   end
 
     def update
-
     end
-
 end
