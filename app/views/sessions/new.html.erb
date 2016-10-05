@@ -1,4 +1,6 @@
-<h1>Log In</h1>
+<h1 class="login">Log In</h1>
+
+<div id="login">
 <%= form_tag sessions_path, method: :post do %>
   <div class="form-group">
     <%= label_tag :email %>
@@ -17,3 +19,4 @@
 
   <%= submit_tag 'Log In', class: 'btn btn-primary btn-lg' %>
 <% end %>
+</div>
