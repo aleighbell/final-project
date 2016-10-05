@@ -12,6 +12,7 @@ get 'business' => 'pages#business'
 #get 'signup' => 'pages#signup'
 get 'business_index' => 'business#index'
 resources :business
+resources :parks
 
 resources :favourites
 get 'offleash_toronto' => 'pages#offleash_toronto'

@@ -1,0 +1,46 @@
+
+<div class="centered">
+
+<h2>Add park</h2>
+
+<%= form_for @park, url: parks_path, html: { multipart: true } do |f| %>
+<br>
+<% if @park.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@park.errors.count, "error") %> prohibited this park from being saved:</h2>
+
+  <ul>
+  <% @park.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+</div>
+<% end %>
+
+<table style="width:50%">
+
+<tr>
+  <td><%= f.label :name %></td>
+  <td><%= f.text_field :name %></td>
+</tr>
+<tr>
+  <td><%= f.label :description %></td>
+  <td><%= f.text_field :description %></td>
+</tr>
+
+<tr>
+  <td><%= f.label :photo %></td>
+  <td><%= f.file_field :photo %></td>
+</tr>
+
+
+</table>
+<br>
+
+<%= f.submit %>
+</p>
+
+<% end %>
+
+
+</div>

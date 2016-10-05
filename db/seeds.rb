@@ -195,3 +195,7 @@ businesses.each do |business|
                    business_address: business[:business_address],
                    city: toronto)
 end
+
+
+
+Park.create(name: 'Park Name', description: 'this is the parks description', photo_file_name: 'missing.png', photo_content_type: '.png', photo_file_size: 300 )

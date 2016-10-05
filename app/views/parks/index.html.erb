@@ -1,0 +1,5 @@
+<% @parks.each do |park| %>
+  pic <br>
+
+<%= image_tag park.photo.url, class: 'hand' %>
+<% end %>
