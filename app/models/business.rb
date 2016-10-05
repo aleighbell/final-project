@@ -5,9 +5,16 @@ class Business < ApplicationRecord
   belongs_to :category
   belongs_to :city
 
-#def display_distance_to(other_business_address)
-#  business_address.distance_to(@business_address, :km).round(3)
-#end
+def display_distance_to(other_business_address)
+ business_address.distance_to(@business_address, :km).round(3)
+end
 
-#if business.geocoded?
-#  business.nearbys(5)
+def nearby_businesses
+  if self.geocoded?
+    return self.nearbys(5)
+  else
+    return nil
+  end
+end
+
+end

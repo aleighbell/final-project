@@ -163,4 +163,5 @@ Business.create!(category: business[:category],
                    business_name: business[:business_name],
                   business_address: business[:business_address],
                   city: toronto)
+                  sleep 1
 end
