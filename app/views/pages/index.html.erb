@@ -1,15 +1,23 @@
+<!DOCTYPE html>
 
-<h3>Find businesses near me:</h3>
-<%= form_tag business_path, method: :get do %>
-  <%= text_field_tag :search_address, params[:search_address], placeholder: "134 Yonge St Toronto" %>
-  <%= submit_tag "GO!" %>
-<% end %>
-
+<button id="find-nearbys">Find dog friendly spots nearby!</button>
   <head>
     <title>Geolocation</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
+
+    <style>
+      html, body {
+        height: 100%
+        margin: 50px;
+        padding: 10px;
+      }
+      #map {
+        height: 60%
+      }
+    </style>
   </head>
+
   <body>
     <div id="mapcontainer">
     <div id="map"></div>
@@ -23,12 +31,12 @@
         });
         var infoWindow = new google.maps.InfoWindow({map: map});
 
-        // Try HTML5 geolocation.
+       // Try HTML5 geolocation.
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
             var pos = {
               lat: position.coords.latitude,
-              lng: position.coords.longtitude
+              lng: position.coords.longitude
             };
 
             infoWindow.setPosition(pos);
@@ -51,7 +59,8 @@
       }
     </script>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['google_maps_api_key'] %>&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.secrets.google_maps_api_key %>&callback=initMap">
+    <%= puts "My key --->#{Rails.application.secrets.google_maps_api_key}<---" %>
     </script>
   </body>
 </html>
