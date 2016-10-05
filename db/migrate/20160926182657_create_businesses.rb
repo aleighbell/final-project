@@ -5,7 +5,6 @@ class CreateBusinesses < ActiveRecord::Migration[5.0]
       t.string :business_name
       t.text :business_address
       t.integer :city_id
-
       t.timestamps
     end
   end

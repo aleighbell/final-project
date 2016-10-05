@@ -2,49 +2,28 @@
   <head>
     <title>Bestfriendly</title>
     <%= csrf_meta_tags %>
-<%#= stylesheet_link_tag    'application', media: 'all'%>
-<%#= javascript_include_tag 'application' %>
 
   </head>
   <body>
+    <body id="<%= pageid %>">
 
-    <header>
-
-          <div class="logo">
-          <div>
+        <p class="slogan">Built for dog owners by dog owners</p>
+      <div>
           <nav>
             <ul>
               <li class = 'nav'><%= link_to "Home", "/" %></li>
-              <div class="dropdown">
-                <button class="dropbtn">Business</button>
-                <div class="dropdown-content">
-                  <a href="#" class="ls">Liquor Store</a>
-                  <a href="#" class="bs">Book Store</a>
-                  <a href="#" class="ds">Department Store</a>
-                  <a href="#" class="hs">Hardware Store</a>
-                  <a href="#" class="ta">Travel Agent</a>
-                  <a href="#" class="gs">Garden Store</a>
-                  <a href="#" class="eye">Eyewear</a>
-                  <a href="#" class="ms">Music Store</a>
-                  <a href="#" class="bank">Bank</a>
-                  <a href="#" class="so">Service Ontario</a>
-                  <a href="#" class="sc">Service Canada</a>
-                  <a href="#" class="ps">Pet Shop</a>
-                  <a href="#" class="cafe">Cafe</a>
-                </div>
-              </div>
-
-              <li><%= link_to "Contact Us", "contact-us", id:"contact-link" %></li>
-              <li><%= link_to "About Us", "about_us" %></li>
-              <li><%= link_to "Offleash toronto", "offleashtoronto" %></li>
-              <li><a id="signin-link" href="signin.html">Sign In</a></li>
-
-              <li class = 'nav'><%= link_to "Contact Us", "contact-us", id:"contact-link" %></li>
-              <li class = 'nav'><%= link_to "About Us", "about_us" %></li>
-              <li class = 'nav'><%= link_to "Offleash Toronto", "offleash_toronto" %></li>
-              <li class = 'nav'><a id="signin-link" href="signin.html">Sign In</a></li>
-
-            </ul>
+              <li class = 'nav'><%= link_to "Business", "business_index"%></li>
+              <li class = 'nav'><%= link_to "Contact Us", "contact_us", id:"contact-link" %></li>
+              <li class='nav'><%= link_to "About Us", about_us_path %> </li>
+             <li class='nav'><%= link_to "Offleash Toronto", offleash_toronto_path %></li>
+              <% if current_user %>
+                  <li class='nav'><span>Logged in as: <%= current_user.name %></span></li>
+                  <li class='nav'><%= link_to 'Log Out', log_out_path %></li>
+                  <% else %>
+                  <li class='nav'>  <%= link_to "Sign up", sign_up_path %> </li>
+                  <li class='nav'>  <%= link_to "Log in", log_in_path %></li>
+                  <% end %>
+              </ul>
           </nav>
           </div>
         </header>
@@ -87,7 +66,6 @@
 </div>
 
 </div>
-
     <%= yield %>
   </body>
 </html>

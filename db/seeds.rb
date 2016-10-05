@@ -1,10 +1,12 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' , name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# # This file should contain all the record creation needed to seed the database with its default values.
+# # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+# #
+# # Examples:
+# #
+# #   movies = Movie.create([{ name: 'Star Wars' , name: 'Lord of the Rings' }])
+# #   Character.create(name: 'Luke', movie: movies.first)
+
 
 if Rails.env == 'development'
   ActiveRecord::Base.establish_connection
@@ -13,7 +15,7 @@ if Rails.env == 'development'
   end
 end
 
-categories = %w( liquor_store book_store department_store hardware_store travel_agent garden_centre eyewear music_store bank service_ontario service_canada pet_shop cafe independent_retailers shoe_store)
+categories = %w( liquor_store book_store department_store hardware_store travel_agent garden_centre eyewear music_store bank service_ontario service_canada pet_shop cafe independent_retailers shoe_store attractions )
 categories.each do |category|
   puts "Creating #{category.titlecase} category."
   Category.create!(category_name: category.titlecase)
@@ -139,11 +141,26 @@ businesses = [
               { category: Category.find_by_category_name('Independent Retailers'),
                 business_name: 'Space Vintage',
                 business_address: '595 Bloor St W M6G 1K4'},
+              { category: Category.find_by_category_name('Attractions'),
+                business_name: 'PawsWay',
+                business_address: '245 Queens Quay, North Building M5J 2K9'},
+              { category: Category.find_by_category_name('Attractions'),
+                business_name: 'Great Lakes Schooner Company',
+                business_address: '249 Queens Quay West M5J 2N5'},
+              { category: Category.find_by_category_name('Attractions'),
+                business_name: 'Black Creek Pioneer Village',
+                business_address: '1000 Murray Ross Parkway M3J 2P3'},
+              { category: Category.find_by_category_name('Attractions'),
+                business_name: 'Centreville Amusement Park',
+                business_address: 'Centre Island'},
+              { category: Category.find_by_category_name('Attractions'),
+                business_name: 'Harbourfront Centre',
+                business_address: '235 Queens Quay West M5J 2G8'}
               ]
 businesses.each do |business|
-  puts "Creating #{business[:business_name]} Business."
-  Business.create!(category: business[:category],
+ puts "Creating #{business[:business_name]} Business."
+Business.create!(category: business[:category],
                    business_name: business[:business_name],
-                   business_address: business[:business_address],
-                   city: toronto)
+                  business_address: business[:business_address],
+                  city: toronto)
 end

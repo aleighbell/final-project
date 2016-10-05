@@ -1,27 +1,25 @@
+<!DOCTYPE html>
 
-<h3>Find businesses near me:</h3>
-<%= form_tag business_path, method: :get do %>
-  <%= text_field_tag :search_address, params[:search_address], placeholder: "134 Yonge St Toronto" %>
-  <%= submit_tag "GO!" %>
-<% end %>
-
+<button id="find-nearbys">Find dog friendly spots nearby!</button>
   <head>
     <title>Geolocation</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <style>
       html, body {
-        height: 80%;
-        margin: 80px;
-        padding: 0;
+        height: 100%
+        margin: 50px;
+        padding: 10px;
       }
       #map {
-        height: 100%;
+        height: 60%
       }
     </style>
   </head>
+
   <body>
     <div id="map"></div>
+    </div>
     <script>
 
       function initMap() {
@@ -31,7 +29,7 @@
         });
         var infoWindow = new google.maps.InfoWindow({map: map});
 
-        // Try HTML5 geolocation.
+       // Try HTML5 geolocation.
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
             var pos = {

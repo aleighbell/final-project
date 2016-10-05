@@ -5,8 +5,8 @@ resources :sessions, only: [:new, :create, :destroy]
 
 root 'pages#index'
 get 'welcome' => 'pages#index'
-post 'contact_us' => 'pages#contact_save'
-get 'contact_us' => 'pages#contact_us'
+post 'contact-us' => 'pages#contact_save'
+get 'contact-us' => 'pages#contact_us'
 get 'about_us' => 'pages#about_us'
 get 'business' => 'pages#business'
 #get 'signup' => 'pages#signup'
