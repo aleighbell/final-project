@@ -2,8 +2,8 @@ class Business < ApplicationRecord
   max_paginates_per 10
   belongs_to :category
   belongs_to :city
-  #geocoded_by :business_address   # can also be an IP address
-  #after_validation :geocode, if: ->(business) { business.address.present? and business.address_changed? }          # auto-fetch coordinates
+  geocoded_by :business_address   # can also be an IP address
+  after_validation :geocode, if: ->(business) { business.address.present? and business.address_changed? }          # auto-fetch coordinates
 
 end
 

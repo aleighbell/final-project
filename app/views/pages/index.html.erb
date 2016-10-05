@@ -12,7 +12,7 @@
     <style>
       html, body {
         height: 80%;
-        margin: 80;
+        margin: 80px;
         padding: 0;
       }
       #map {
@@ -36,7 +36,7 @@
           navigator.geolocation.getCurrentPosition(function(position) {
             var pos = {
               lat: position.coords.latitude,
-              lng: position.coords.longtitude
+              lng: position.coords.longitude
             };
 
             infoWindow.setPosition(pos);
@@ -59,7 +59,8 @@
       }
     </script>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['google_maps_api_key'] %>&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.secrets.google_maps_api_key %>&callback=initMap">
+    <%= puts "My key --->#{Rails.application.secrets.google_maps_api_key}<---" %>
     </script>
   </body>
 </html>
