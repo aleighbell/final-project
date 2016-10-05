@@ -73,7 +73,7 @@ if Rails.env == 'development'
   end
 end
 
-categories = %w( liquor_store book_store department_store hardware_store travel_agent garden_centre eyewear music_store bank service ontario service canada pet shop cafe)
+categories = %w( liquor_store book_store department_store hardware_store travel_agent garden_centre eyewear music_store bank service_ontario service_canada pet_shop cafe independent_retailers shoe_store)
 categories.each do |category|
   puts "Creating #{category.titlecase} category."
   Category.create!(category_name: category.titlecase)
@@ -186,8 +186,20 @@ businesses = [
                 business_address: '549 Parliament St M4X 1P7'},
               { category: Category.find_by_category_name('cafe'),
                 business_name:'Tom & Sawyer',
-                business_address: '1247 Queen East M4L 1C2'}
-            ]
+                business_address: '1247 Queen East M4L 1C2'},
+              { category: Category.find_by_category_name('Shoe Store'),
+                business_name: 'John Fluevog',
+                business_address: '686 Queen St. West M6J 1E7'},
+              { category: Category.find_by_category_name('Independent Retailers'),
+                business_name: 'Cry Wolf',
+                business_address: '91 Ossington Ave M6J 2Z2'},
+              { category: Category.find_by_category_name('Music Store'),
+                business_name: 'Kops Records',
+                business_address: '229 Queen St West M5V 1Z4'},
+              { category: Category.find_by_category_name('Independent Retailers'),
+                business_name: 'Space Vintage',
+                business_address: '595 Bloor St W M6G 1K4'},
+              ]
 businesses.each do |business|
   puts "Creating #{business[:business_name]} Business."
   Business.create!(category: business[:category],
