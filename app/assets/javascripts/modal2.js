@@ -95,12 +95,27 @@ $('.empty_heart').on('click', function() {
             {
                 $(this).addClass('empty_heart');
                 $(this).removeClass('full_heart');
-
+                $.ajax({
+                         url: '/favourite',
+                         method: 'delete',
+                         data: {id: 'user_id' },
+                       });
             }
+
+
 console.log('you added full heart class')
 });
 
 
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("show");
+    }
+}
 
 
 

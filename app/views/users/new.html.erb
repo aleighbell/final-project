@@ -1,7 +1,9 @@
-<h1>Registration</h1>
+<h1 class="reghead">Registration</h1>
+
+<div id="reg">
 
 <%= form_for @user do |f| %>
-  
+
   <div class="form-group">
     <%= f.label :name %>
     <%= f.text_field :name, class: 'form-control', required: true %>
@@ -22,3 +24,4 @@
   <%= f.submit 'Register', class: 'btn btn-primary btn-lg' %>
 
 <% end %>
+</div>

@@ -6,12 +6,12 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = 'Welcome!'
-      login(params[:user][:email], params[:user][:password])
-      redirect_to root_path
-    else
-      render 'new'
+        redirect_to root_path, alert: "signed up"
+      else
+      flash.now[:alert] = 'failure'
+        render :new
     end
+
   end
 
   private
