@@ -1,37 +1,62 @@
 <!DOCTYPE html>
-
-<button id="find-nearbys">Find dog friendly spots nearby!</button>
+<html>
   <head>
     <title>Geolocation</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-
     <style>
       html, body {
-        height: 100%
-        margin: 50px;
-        padding: 10px;
+        height: 100%;
+        margin: 0;
+        padding: 0;
       }
       #map {
-        height: 60%
+        height: 100%;
       }
     </style>
   </head>
-
   <body>
-    <div id="mapcontainer">
     <div id="map"></div>
-    </div>
+
     <script>
+
+    // function initMap() {
+    //   var myLatLng = {lat: -25.363, lng: 131.044};
+    //
+    //   var map = new google.maps.Map(document.getElementById('map'), {
+    //     zoom: 4,
+    //     center: myLatLng
+    //   });
+    //
+    // }
+      // function marker (lat, lng) {
+      //   var myLatLng = {lat: lat, lng: lng };
+      //   var marker = new google.maps.Marker({
+      //     position: myLatLng,
+      //     map: map,
+      //     title: 'Hello World!'
+      //   });
+      //
+      // }
 
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: -34.397, lng: 150.644},
-          zoom: 17
+          zoom: 12
         });
         var infoWindow = new google.maps.InfoWindow({map: map});
 
-       // Try HTML5 geolocation.
+        function marker (lat, lng) {
+          var myLatLng = {lat: lat, lng: lng };
+          var marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            // title: 'Hello World!'
+          });
+
+        }
+
+        // Try HTML5 geolocation.
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
             var pos = {
@@ -40,8 +65,19 @@
             };
 
             infoWindow.setPosition(pos);
-            infoWindow.setContent('You are here!');
+            infoWindow.setContent('You and your dog are here!');
             map.setCenter(pos);
+
+       <% Business.all.each do |business| %>
+          marker(<%=business.latitude%> , <%=business.longitude%>);
+      <% end %>
+            // var myLatLng = {lat: 43.6622853, lng: -79.383775};
+            // var marker = new google.maps.Marker({
+            //   position: myLatLng,
+            //   map: map,
+            //   title: 'Hello World!'
+            // });
+
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
           });
@@ -58,11 +94,10 @@
                               'Error: Your browser doesn\'t support geolocation.');
       }
     </script>
+    <%# raise Rails.application.secrets.google_maps_api_key %>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.secrets.google_maps_api_key %>&callback=initMap">
-    <%= puts "My key --->#{Rails.application.secrets.google_maps_api_key}<---" %>
-    </script>
-  </body>
+      src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.secrets.google_maps_api_key %>&callback=initMap">
+      <%= puts "My key --->#{Rails.application.secrets.google_maps_api_key}<---" %>
+      </script>
+      </body>
 </html>
-
-<!-- the geocode map is from google geolocation API
