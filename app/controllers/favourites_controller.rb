@@ -18,6 +18,9 @@ end
   end
 end
 
+def update
+
+end
 
 def favourites_params
   puts params.inspect
@@ -25,6 +28,10 @@ def favourites_params
   params.permit(:user_id, :business_id)
 end
 
+def destroy
+  Favorite.find(params[:id]).destroy
+     flash[:success] = "User deleted"
+end
 
 
 end

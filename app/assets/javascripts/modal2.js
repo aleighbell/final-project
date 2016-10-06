@@ -95,8 +95,14 @@ $('.empty_heart').on('click', function() {
             {
                 $(this).addClass('empty_heart');
                 $(this).removeClass('full_heart');
-
+                $.ajax({
+                         url: '/favourite',
+                         method: 'delete',
+                         data: {id: 'user_id' },
+                       });
             }
+
+
 console.log('you added full heart class')
 });
 
