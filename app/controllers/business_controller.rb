@@ -45,7 +45,7 @@ class BusinessController < ApplicationController
 
   def create
 
-    @business = Business.new(favourite_params)
+    @business = Business.new(business_params)
     @city = City.new(:city_name => 'qqq'  )
 
     @category = Category.new(:category_name => 'qqq'  )
