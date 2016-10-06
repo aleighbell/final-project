@@ -1,0 +1,372 @@
+
+/*logo*/
+
+#pages-index  {
+  background-image: url('toskyline.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#business-index {
+  background-color: #e0e0e0;
+}
+#pages-about_us {
+  background-color: #e0e0e0;
+}
+
+#pages-contact_us {
+  background-color: #e0e0e0;
+}
+
+#pages-offleash_toronto {
+  background-color: #e0e0e0;
+  list-style: none;
+  text-align: center;
+}
+
+#users-new {
+  background-color: #e0e0e0;
+}
+
+#sessions-new {
+  background-color: #e0e0e0;
+}
+
+
+.logo {
+    background-color: ##D3D3D3	;
+    text-align: center;
+}
+
+.logoimage{
+  max-width:180px;
+  padding-top: 10px;
+  margin-bottom: -20px;
+}
+
+.slogan {
+  font-family:"Petit Formal Script";
+  padding-top: 5px;
+  margin-bottom: -12px;
+  font-weight: 800px;
+  color: white;
+}
+/*nav bar*/
+
+nav {
+  text-align: center;
+  padding: 2px 0;
+  margin: 20px 0 0;
+  background-color: transparent;	;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0 10px;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+}
+
+nav a {
+  font-weight: 500;
+  padding: 15px 10px;
+  color: black;
+  text-decoration: none;
+}
+
+
+/*footer*/
+
+
+footer {
+  font-size: 0.75em;
+  text-align: center;
+  clear: both;
+  padding-top: 50px;
+  color: #ccc;
+}
+
+/*Contact us modal*/
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /*background-color: rgba(30,30,30,0.8);*/
+  z-index: 1
+
+}
+
+.contactus {
+    width: 400px;
+    height: 450px;
+    padding: 2em;
+    border-radius: 25px;
+    background-color: white;
+    border: 4px solid #63ADF2;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .contactus>input {
+      display: block;
+      /*border: none;*/
+      outline: none;
+      /*padding: 0.5em;*/
+      font: 1.5em "Bebas Neue";
+      width: 100%;
+      margin: 1em 0;
+      color: #555;
+  }
+
+  .close {
+    display: block;
+    border: none;
+    outline: none;
+    width: 1em;
+    height: 1em;
+    font: 1.5em Arial;
+    background-color: #bc2a39;
+    color: #e7c0b9;
+    border-radius: 0.5em;
+    line-height: 0;
+
+    position: absolute;
+    top: 0.40em;
+    right: 0.40em;
+}
+
+input.submit {
+    display: block;
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 0.5em;
+    font: 1.5em "Bebas Neue";
+    margin: 1em 0;
+    background-color: #6ab47b;
+    color: white;
+    border-radius: 10px;
+}
+
+/*Sign In Modal*/
+
+.signinsignup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /*background-color: rgba(30,30,30,0.8);*/
+  z-index: 1;
+}
+
+.signinsignup {
+    width: 400px;
+    height: 450px;
+    padding: 2em;
+    border-radius: 25px;
+    background-color: white;
+    border: 4px solid #63ADF2;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .signinsignup>input {
+      display: block;
+      border: none;
+      outline: none;
+      /*padding: 0.5em;*/
+      font: 1.5em "Bebas Neue";
+      width: 100%;
+      margin: 1em 0;
+      color: #555;
+  }
+
+  .close {
+    display: block;
+    border: none;
+    outline: none;
+    width: 1em;
+    height: 1em;
+    font: 1.5em Arial;
+    background-color: #bc2a39;
+    color: #e7c0b9;
+    border-radius: 0.5em;
+    line-height: 0;
+
+    position: absolute;
+    top: 0.40em;
+    right: 0.40em;
+}
+
+button.signinsubmit {
+    display: block;
+    border: none;
+    outline: none;
+    width: 89%;
+    padding: 0.5em;
+    font: 1.5em "Bebas Neue";
+    margin: 1em 0;
+    background-color: #6ab47b;
+    color: white;
+    border-radius: 10px;
+}
+
+button.fbsubmit {
+    display: block;
+    border: none;
+    outline: none;
+    width: 88%;
+    padding: 0.5em;
+    font: 1.5em "Bebas Neue";
+    margin: 1em 0;
+    background-color: #6ab47b;
+    color: white;
+    border-radius: 10px;
+}
+.regsignin{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.bfmain {
+  margin-bottom: 50px;
+}
+
+
+.empty_heart{
+  width: 100px;
+  background-image: url(empty_heart.png);
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+  cursor: pointer;
+  border-color: black;
+}
+
+.full_heart{
+  width: 100px;
+  background-image: url(full_heart.png);
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+  cursor: pointer;
+  border-color: black;
+}
+
+#mapcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80%;
+}
+
+#map {
+  width: 1080px;
+  height: 80%;
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+button.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 33.333%;
+    text-align: center;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+button.accordion.active, button.accordion:hover {
+    background-color: #ddd;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+div.panel {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    text-align: center;
+}
+
+/* The "show" class is added to the accordion panel when the user clicks on one of the buttons. This will show the panel content */
+div.panel.show {
+display: block;
+   width: 31%;
+   margin-left: auto;
+   margin-right: auto;
+
+}
+
+#reg {
+    width: 210px;
+    height: 230px;
+    padding: 2em;
+    border-radius: 25px;
+    background-color: white;
+    border: 4px solid #63ADF2;
+    position: absolute;
+    margin: auto;
+    top: 280px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+#reg>input {
+      display: block;
+      /*border: none;*/
+      outline: none;
+      /*padding: 0.5em;*/
+      font: 1.5em "Bebas Neue";
+      width: 100%;
+      margin: 1em 0;
+      color: #555;
+  }
+
+.reghead {
+  text-align: center;
+}
+
+#login {
+    width: 200px;
+    height: 200px;
+    padding: 2em;
+    border-radius: 25px;
+    background-color: white;
+    border: 4px solid #63ADF2;
+    position: absolute;
+    margin: auto;
+    top: 250px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .form-group {
+    padding: 0.5em;
+  }
+
+.login {
+  text-align: center;
+}

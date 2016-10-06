@@ -3,9 +3,21 @@
     <title>Bestfriendly</title>
     <%= csrf_meta_tags %>
 
+
+<%= stylesheet_link_tag    'application', media: 'all'%>
+<%= javascript_include_tag 'application' %>
+
+  <script src="https://maps.google.apis.com/maps/api/js?key=<%= ENV['google_maps_api_key'] %>&callback=initMap"
+      async defer></script>
+
   </head>
   <body>
     <body id="<%= pageid %>">
+
+
+    <header>
+      <div class="logo">
+        <a href="index.html"><%=image_tag"logo.png", class:"logoimage" %></a>
 
         <p class="slogan">Built for dog owners by dog owners</p>
       <div>
