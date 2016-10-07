@@ -59,9 +59,9 @@ $('.submit').on('click', function(eventobject) {
 
   $( "a, .dropbtn" ).hover(
   function() {
-      $(this).css({"color":"black"});
+      $(this).css({"color":"grey"});
   }, function() {
-      $(this).css({"color":"white"});
+      $(this).css({"color":"black"});
   }
 );
 
