@@ -1,3 +1,4 @@
+
 if Rails.env == 'development'
   ActiveRecord::Base.establish_connection
   ActiveRecord::Base.connection.tables.each do |table|
@@ -152,7 +153,7 @@ businesses.each_with_index do |business, index|
   business_number = index + 1
   puts "Creating ##{business_number}: #{business[:business_name]} Business."
 
-  Business.create!(category: business[:category],
+   Business.create!(category: business[:category],
                    business_name: business[:business_name],
                    business_address: business[:business_address],
                    city: toronto)
@@ -169,11 +170,13 @@ end
 #     ActiveRecord::Base.connection.execute(TRUNCATE "#{table}") unless table == "schema_migrations"
 #   end
 # end
-
 #
-# cities = City.create!([{city:'Toronto' }])
+# categories = %w( liquor_store book_store department_store hardware_store travel_agent garden_centre eyewear music_store bank service ontario service canada pet shop cafe)
+# categories.each do |category|
+#   puts "Creating #{category.titlecase} category."
+#   Category.create!(category_name: category.titlecase)
+# end
 #
-
 # businesses = [
 #               { category: Category.find_by_category_name('Liquor Store'),
 #                 business_name: 'Wine Rack',
