@@ -152,7 +152,7 @@ businesses.each_with_index do |business, index|
   business_number = index + 1
   puts "Creating ##{business_number}: #{business[:business_name]} Business."
 
-  Business.create!(category: business[:category],
+   Business.create!(category: business[:category],
                    business_name: business[:business_name],
                    business_address: business[:business_address],
                    city: toronto)
