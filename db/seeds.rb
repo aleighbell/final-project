@@ -11,7 +11,7 @@ categories.each do |category|
   Category.create!(category_name: category.titlecase)
 end
 
-toronto = City.create!(city: 'Toronto')
+toronto = City.create!(city_name: 'Toronto')
 
 businesses = [
               { category: Category.find_by_category_name('Liquor Store'),
