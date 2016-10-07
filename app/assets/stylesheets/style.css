@@ -76,9 +76,11 @@ nav a {
   text-decoration: none;
 }
 
+a.nav:hover {
+  color: #0934F4;
+}
 
 /*footer*/
-
 
 footer {
   font-size: 0.75em;
