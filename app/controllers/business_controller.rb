@@ -11,7 +11,7 @@ class BusinessController < ApplicationController
   end
 
   def business_params
-    params.require(:band).permit(:category_id, :business_name, :business_address, :city_id, :latitude, :longtitude)
+    params.require(:business).permit(:category_id, :business_name, :business_address, :city_id, :latitude, :longitude)
   end
 
   def business
@@ -25,19 +25,17 @@ class BusinessController < ApplicationController
   end
 
   def new
-    @business = Business.new
+    @businesses = Business.new
   end
 
   def create
-    @business = Business.new(favourite_params)
-    @city = City.new(:city_name => 'qqq'  )
+    @businesses = Business.new(business_params)
 
-    @category = Category.new(:category_name => 'qqq'  )
-    @user = User.new(:name => 'insert name'  )
-  @business.save
-  @city.save
-  @category.save
-  @user.save
+    if @business.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
  end
