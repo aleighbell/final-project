@@ -1,4 +1,4 @@
-class BusinessController < ApplicationController
+class BusinessesController < ApplicationController
 
   def index
     @business = Business.all
@@ -25,11 +25,12 @@ class BusinessController < ApplicationController
   end
 
   def new
+
     @businesses = Business.new
   end
 
   def create
-    @businesses = Business.new(business_params)
+    @business = Business.new(business_params)
 
     if @business.save
       redirect_to root_path
