@@ -3,8 +3,8 @@
 
 #pages-index  {
   background-image: url('IMG_1307.JPG');
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-size: 2000px
+
 }
 #business-index {
   background-color: #e0e0e0;
@@ -279,7 +279,7 @@ button.fbsubmit {
 }
 
 #map {
-  width: 1080px;
+
   height: 80%;
 }
 
@@ -369,4 +369,9 @@ display: block;
 
 .login {
   text-align: center;
+}
+
+.centered{
+  width: 80%;
+left: 11%;
 }
