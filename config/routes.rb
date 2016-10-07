@@ -10,8 +10,8 @@ get 'contact-us' => 'pages#contact_us'
 get 'about_us' => 'pages#about_us'
 get 'business' => 'pages#business'
 #get 'signup' => 'pages#signup'
-get 'business_index' => 'business#index'
-resources :business
+
+resources :businesses
 
 resources :favourites
 get 'offleash_toronto' => 'pages#offleash_toronto'

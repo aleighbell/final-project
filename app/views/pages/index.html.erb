@@ -20,29 +20,10 @@
 
     <script>
 
-    // function initMap() {
-    //   var myLatLng = {lat: -25.363, lng: 131.044};
-    //
-    //   var map = new google.maps.Map(document.getElementById('map'), {
-    //     zoom: 4,
-    //     center: myLatLng
-    //   });
-    //
-    // }
-      // function marker (lat, lng) {
-      //   var myLatLng = {lat: lat, lng: lng };
-      //   var marker = new google.maps.Marker({
-      //     position: myLatLng,
-      //     map: map,
-      //     title: 'Hello World!'
-      //   });
-      //
-      // }
-
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: -34.397, lng: 150.644},
-          zoom: 12
+          zoom: 14
         });
         var infoWindow = new google.maps.InfoWindow({map: map});
 
@@ -51,7 +32,6 @@
           var marker = new google.maps.Marker({
             position: myLatLng,
             map: map,
-            // title: 'Hello World!'
           });
 
         }
@@ -71,12 +51,6 @@
        <% Business.all.each do |business| %>
           marker(<%=business.latitude%> , <%=business.longitude%>);
       <% end %>
-            // var myLatLng = {lat: 43.6622853, lng: -79.383775};
-            // var marker = new google.maps.Marker({
-            //   position: myLatLng,
-            //   map: map,
-            //   title: 'Hello World!'
-            // });
 
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter());

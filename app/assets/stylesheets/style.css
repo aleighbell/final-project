@@ -76,9 +76,11 @@ nav a {
   text-decoration: none;
 }
 
+a.nav:hover {
+  color: #0934F4;
+}
 
 /*footer*/
-
 
 footer {
   font-size: 0.75em;
@@ -349,7 +351,7 @@ display: block;
 }
 
 #login {
-    width: 200px;
+    width: 250px;
     height: 200px;
     padding: 2em;
     border-radius: 25px;
