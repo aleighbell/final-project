@@ -1,3 +1,4 @@
+
 if Rails.env == 'development'
   ActiveRecord::Base.establish_connection
   ActiveRecord::Base.connection.tables.each do |table|
