@@ -19,7 +19,8 @@ end
 end
 
 def update
-
+    puts "***********************"
+puts "you have begun the update prodess"
 end
 
 def favourites_params
@@ -29,9 +30,10 @@ def favourites_params
 end
 
 def destroy
-  Favorite.find(params[:id]).destroy
-     flash[:success] = "User deleted"
+  Favourite.find_by(id: params[:id]).destroy
+     flash[:success] = "Favourite deleted"
 end
+
 
 
 end

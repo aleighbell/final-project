@@ -76,35 +76,44 @@ $('.submit').on('click', function(eventobject) {
 
 
 
+
+$('.full_heart').on('click', function() {
+
+    console.log("you clicked")
+    $(this).removeClass('full_heart');
+    $(this).addClass('empty_heart');
+    var to_delete = $(this).attr('data-to-delete')
+    var string = 'id=' ;
+    $.ajax({
+     type: "DELETE",
+     url: "/favourites/" + to_delete,
+     data: {id: to_delete},
+     dataType: "json", });
+    console.log("empty")
+
+});
+
+
 $('.empty_heart').on('click', function() {
   console.log('you clicked')
 
-  if($(this).hasClass('empty_heart'))
-            {
+
+          user = $(this).attr('data-user')
+                bus = $(this).attr('data-bus')
                 $(this).removeClass('empty_heart');
                 $(this).addClass('full_heart');
+                 console.log("full")
 
                 $.ajax({
-                         url: '/favourites',
-                         method: 'post',
-                         data: {user_id: 'user_id', business_id: 'business_id' },
+                 url: '/favourites',
+                 method: 'post',
+                 data: {user_id: user, business_id: bus }
                        });
-            }
 
-            else
-            {
-                $(this).addClass('empty_heart');
-                $(this).removeClass('full_heart');
-                $.ajax({
-                         url: '/favourite',
-                         method: 'delete',
-                         data: {id: 'user_id' },
-                       });
-            }
-
-
-console.log('you added full heart class')
 });
+
+
+
 
 
 var acc = document.getElementsByClassName("accordion");
