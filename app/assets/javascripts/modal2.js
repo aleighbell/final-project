@@ -67,51 +67,41 @@ $('.submit').on('click', function(eventobject) {
 
 // change hearts
 
-// $('.full_heart').on('click', function() {
-//   console.log('you clicked')
-//   $(this).removeClass('full_heart');
-//   $(this).addClass('empty_heart');
-// console.log('you added empty heart class')
-// });
 
+
+
+
+
+
+$(".empty_heart").click(function(){
+
+      user = $(this).attr('data-user')
+            bus = $(this).attr('data-bus')
+             console.log("made it full")
+            $.ajax({
+             url: '/favourites',
+             method: 'post',
+             data: {user_id: user, business_id: bus }
+                   });
+             $(this).toggleClass("full_heart");
+             $(this).toggleClass("empty_heart");
+});
 
 
 
 $('.full_heart').on('click', function() {
 
     console.log("you clicked")
-    $(this).removeClass('full_heart');
-    $(this).addClass('empty_heart');
+    $(this).toggleClass("full_heart");
+    $(this).toggleClass("empty_heart");
     var to_delete = $(this).attr('data-to-delete')
-    var string = 'id=' ;
     $.ajax({
      type: "DELETE",
      url: "/favourites/" + to_delete,
      data: {id: to_delete},
      dataType: "json", });
     console.log("empty")
-
 });
-
-
-$('.empty_heart').on('click', function() {
-  console.log('you clicked')
-
-
-          user = $(this).attr('data-user')
-                bus = $(this).attr('data-bus')
-                $(this).removeClass('empty_heart');
-                $(this).addClass('full_heart');
-                 console.log("full")
-
-                $.ajax({
-                 url: '/favourites',
-                 method: 'post',
-                 data: {user_id: user, business_id: bus }
-                       });
-
-});
-
 
 
 
