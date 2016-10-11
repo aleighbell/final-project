@@ -4,11 +4,14 @@ class UsersController < ApplicationController
   end
 
   def create
+
     @user = User.new(user_params)
     if @user.save
         redirect_to root_path, alert: "signed up"
+        puts "*****USER CREATED"
       else
       flash.now[:alert] = 'failure'
+      puts "*******fialure"
         render :new
     end
 
@@ -17,6 +20,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation, :name)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 end
