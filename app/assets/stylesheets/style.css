@@ -377,3 +377,24 @@ display: block;
   width: 80%;
 left: 11%;
 }
+
+.business_list{
+  margin: 0px;
+  left: 25%;
+  position: relative;
+
+}
+
+.row1{
+  width: 150px
+
+}
+
+.row2{
+  width: 240px
+
+}
+
+.center{
+
+}

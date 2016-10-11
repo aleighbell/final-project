@@ -1,4 +1,5 @@
-<h1> List of Businesses </h1>
+
+<h1 class="center"> List of Businesses </h1>
 
 <br>
 <br>
@@ -6,26 +7,28 @@
   <%= button_to 'Add New Business', new_business_path, method: "get", class: 'viewbutton' %>
 </div>
 
+<div class="centered">
+
 
 <% @business.each do |business| %>
 
 
- <div class="centered">
-  <table>
+ <div class="">
+  <table class="business_list">
     <tr>
-      <td>
+      <td class="row1">
         Business Name
       </td>
-      <td>
+      <td class="row2">
         <%= business.business_name %>
       </td>
 
     <% if Favourite.where(user_id: current_user, business_id: business.id).last != nil%>
-    <%= getrid = Favourite.where(user_id: current_user, business_id: business.id).last.id %>
+    <% getrid = Favourite.where(user_id: current_user, business_id: business.id).last.id %>
     <% end %>
 
       <% if Favourite.where(user_id: current_user, business_id: business.id).last == ''%>
-      <td rowspan="3" data-to-delete= '<%= getrid %>'  data-user= "<%=current_user.id %>" data-bus= "<%= business.id%>" class="empty_heart">
+      <td  rowspan="3" data-to-delete= '<%= getrid %>'  data-user= "<%=current_user.id %>" data-bus= "<%= business.id%>" class="empty_heart">
 
       <% elsif Favourite.where(user_id: current_user, business_id: business.id).last == nil%>
       <td rowspan="3" data-to-delete= ''  data-user= "<%=current_user.id %>" data-bus= "<%= business.id%>" class="empty_heart">
@@ -39,16 +42,16 @@
 
     </tr>
   <tr>
-    <td>
+    <td class="row1">
       Address
     </td>
-    <td>
+    <td class="row2">
     <%=   business.business_address %>
     </td>
   </tr>
 
   <tr>
-    <td>
+    <td class="row1">
       City
     </td>
     <td>
@@ -61,7 +64,7 @@
 
   <tr>
     <td rowspan= '3'>
-<%= button_to 'View '  + business.business_name, { action: "show", id: business.id  }, method: "get", class: 'viewbutton' %>
+<%= button_to 'View ', { action: "show", id: business.id  }, method: "get", class: 'viewbutton' %>
     </td>
   </tr>
 <br>
@@ -72,7 +75,7 @@
  </div>
 <% end %>
 
-
+</div>
 
 
 <%= paginate @business%>

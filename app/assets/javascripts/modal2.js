@@ -83,6 +83,7 @@ $(".empty_heart").click(function(){
              method: 'post',
              data: {user_id: user, business_id: bus }
                    });
+                   location.reload();
             //  $(this).toggleClass("full_heart");
             //  $(this).toggleClass("empty_heart");
 });

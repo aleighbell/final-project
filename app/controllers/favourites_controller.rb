@@ -8,7 +8,7 @@ end
 
     @favourite = Favourite.new(favourites_params)
     if @favourite.save
-       redirect_to businesses_path
+       
     puts "***********************"
     puts params[:user_id]
     puts params[:business_id]
