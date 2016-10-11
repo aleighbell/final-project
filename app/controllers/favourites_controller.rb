@@ -8,7 +8,7 @@ end
 
     @favourite = Favourite.new(favourites_params)
     if @favourite.save
-      # redirect_to businesses_path
+       redirect_to businesses_path
     puts "***********************"
     puts params[:user_id]
     puts params[:business_id]
@@ -32,7 +32,10 @@ end
 
 def destroy
   Favourite.find_by(id: params[:id]).destroy
-     flash[:success] = "Favourite deleted"
+  flash[:success] = "Favourite deleted"
+  redirect_to businesses_path
+  puts "YOU JUST DELETED A FAVOURITE!!!!!!!!!!!!!!!!!!!!!!"
+
 end
 
 

@@ -83,8 +83,8 @@ $(".empty_heart").click(function(){
              method: 'post',
              data: {user_id: user, business_id: bus }
                    });
-             $(this).toggleClass("full_heart");
-             $(this).toggleClass("empty_heart");
+            //  $(this).toggleClass("full_heart");
+            //  $(this).toggleClass("empty_heart");
 });
 
 
@@ -92,14 +92,15 @@ $(".empty_heart").click(function(){
 $('.full_heart').on('click', function() {
 
     console.log("you clicked")
-    $(this).toggleClass("full_heart");
-    $(this).toggleClass("empty_heart");
+    // $(this).toggleClass("full_heart");
+    // $(this).toggleClass("empty_heart");
     var to_delete = $(this).attr('data-to-delete')
     $.ajax({
      type: "DELETE",
      url: "/favourites/" + to_delete,
      data: {id: to_delete},
      dataType: "json", });
+     location.reload();
     console.log("empty")
 });
 
