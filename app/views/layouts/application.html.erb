@@ -6,6 +6,11 @@
       <%= javascript_include_tag 'application' %>
 
   </head>
+  <% flash.each do |name, msg| %>
+<div class="centered yellow">
+<%= content_tag :div, msg, :id => "flash_#{name}" %>
+</div>
+<% end %>
 
     <body id="<%= pageid %>">
 
@@ -16,6 +21,7 @@
 
         <p class="slogan">Built for dog owners by dog owners</p>
       <div>
+
           <nav>
             <ul>
               <li class = 'nav'><%= link_to "Home", "/" %></li>

@@ -23,20 +23,22 @@
         <%= business.business_name %>
       </td>
 
-    <% if Favourite.where(user_id: current_user, business_id: business.id).last != nil%>
-    <% getrid = Favourite.where(user_id: current_user, business_id: business.id).last.id %>
-    <% end %>
+    <% if current_user %>
+        <% if Favourite.where(user_id: current_user, business_id: business.id).last != nil%>
+        <% getrid = Favourite.where(user_id: current_user, business_id: business.id).last.id %>
+        <% end %>
 
-      <% if Favourite.where(user_id: current_user, business_id: business.id).last == ''%>
-      <td  rowspan="3" data-to-delete= '<%= getrid %>'  data-user= "<%=current_user.id %>" data-bus= "<%= business.id%>" class="empty_heart">
+          <% if Favourite.where(user_id: current_user, business_id: business.id).last == ''%>
+          <td  rowspan="3" data-to-delete= '<%= getrid %>'  data-user= "<%=current_user.id %>" data-bus= "<%= business.id%>" class="empty_heart">
 
-      <% elsif Favourite.where(user_id: current_user, business_id: business.id).last == nil%>
-      <td rowspan="3" data-to-delete= ''  data-user= "<%=current_user.id %>" data-bus= "<%= business.id%>" class="empty_heart">
+          <% elsif Favourite.where(user_id: current_user, business_id: business.id).last == nil%>
+          <td rowspan="3" data-to-delete= ''  data-user= "<%=current_user.id %>" data-bus= "<%= business.id%>" class="empty_heart">
 
+          <% else %>
+          <td rowspan="3" data-to-delete= '<%= getrid %>'  data-user= "<%=current_user.id %>" data-bus= "<%= business.id%>" class="full_heart">
+          <%end %>
       <% else %>
-      <td rowspan="3" data-to-delete= '<%= getrid %>'  data-user= "<%=current_user.id %>" data-bus= "<%= business.id%>" class="full_heart">
-      <%end %>
-
+    <% end %>
 
     </td>
 
