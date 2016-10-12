@@ -1,27 +1,51 @@
-<h1 class="reghead">Registration</h1>
+<br>
+<br>
+<div class="centered_50">
+  <h1>SIGN Up</h1>
+  <br>
+  <br>
+  <%= form_for @user do |f| %>
+  <table class="centered_50">
+    <%= user = current_user %>
+    <tr>
+      <td><%= f.label :name%></td>
+      <td>  <%= f.text_field :name, class: "form-control" %></td>
+    </tr>
 
-<div id="reg">
+    <tr>
+      <td>  <%= f.label :email %>  </td>
+      <td>  <%= f.email_field :email, class: "form-control" %>
+    </tr>
 
-<%= form_for @user do |f| %>
+    <tr>
+      <td>  <%= f.label :password %></td>
+      <td>  <%= f.password_field :password, class: "form-control" %></td>
+    </tr>
 
-  <div class="form-group">
-    <%= f.label :name %>
-    <%= f.text_field :name, class: 'form-control', required: true %>
-  </div>
+    <tr>
+      <td>
+        <%= f.label :password_confirmation %>
+      </td>
+      <td>
+        <%= f.password_field :password_confirmation, class: "form-control" %>
+      </td>
+    </tr>
 
-  <div class="form-group">
-    <%= f.label :email %>
-    <%= f.email_field :email, class: 'form-control', required: true %>
-  </div>
-  <div class="form-group">
-    <%= f.label :password %>
-    <%= f.password_field :password, class: 'form-control', required: true %>
-  </div>
-  <div class="form-group">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation, class: 'form-control', required: true %>
-  </div>
-  <%= f.submit 'Register', class: 'btn btn-primary btn-lg' %>
+    <tr>
+      <td>
+        <br>
+        <div class="text_align">  <%= submit_tag "       Sign Up", class: 'button fix' %>  </div>
+      </td>
+    </tr>
 
-<% end %>
+  </table>
+  <% end %>
 </div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

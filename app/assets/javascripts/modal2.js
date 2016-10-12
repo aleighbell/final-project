@@ -67,44 +67,45 @@ $('.submit').on('click', function(eventobject) {
 
 // change hearts
 
-// $('.full_heart').on('click', function() {
-//   console.log('you clicked')
-//   $(this).removeClass('full_heart');
-//   $(this).addClass('empty_heart');
-// console.log('you added empty heart class')
-// });
 
 
 
-$('.empty_heart').on('click', function() {
-  console.log('you clicked')
-
-  if($(this).hasClass('empty_heart'))
-            {
-                $(this).removeClass('empty_heart');
-                $(this).addClass('full_heart');
-
-                $.ajax({
-                         url: '/favourites',
-                         method: 'post',
-                         data: {user_id: 'user_id', business_id: 'business_id' },
-                       });
-            }
-
-            else
-            {
-                $(this).addClass('empty_heart');
-                $(this).removeClass('full_heart');
-                $.ajax({
-                         url: '/favourite',
-                         method: 'delete',
-                         data: {id: 'user_id' },
-                       });
-            }
 
 
-console.log('you added full heart class')
+
+$(".empty_heart").click(function(){
+
+      user = $(this).attr('data-user')
+            bus = $(this).attr('data-bus')
+             console.log("made it full")
+            $.ajax({
+             url: '/favourites',
+             method: 'post',
+             data: {user_id: user, business_id: bus }
+                   });
+                   location.reload();
+            //  $(this).toggleClass("full_heart");
+            //  $(this).toggleClass("empty_heart");
 });
+
+
+
+$('.full_heart').on('click', function() {
+
+    console.log("you clicked")
+    // $(this).toggleClass("full_heart");
+    // $(this).toggleClass("empty_heart");
+    var to_delete = $(this).attr('data-to-delete')
+    $.ajax({
+     type: "DELETE",
+     url: "/favourites/" + to_delete,
+     data: {id: to_delete},
+     dataType: "json", });
+     location.reload();
+    console.log("empty")
+});
+
+
 
 
 var acc = document.getElementsByClassName("accordion");
