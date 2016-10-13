@@ -1,77 +1,87 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Geolocation</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <style>
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      #map {
-        height: 100%;
-      }
-    </style>
-  </head>
-  <body><br><br>
-    <div class = "centered" id="map"></div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<head>
+   <title>Geolocation</title>
+   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+   <meta charset="utf-8">
+   <style>
+     html, body {
+       height: 100%;
+       margin: 0;
+       padding: 0;
+     }
+     #map {
+       height: 100%;
+     }
+   </style>
+ </head>
+ <body><br><br>
+   <div class = "centered" id="map"></div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-    <script>
+   <script>
+     function initMap() {
+       var map = new google.maps.Map(document.getElementById('map'), {
+         center: {lat: -34.397, lng: 150.644},
+         zoom: 14
+       });
+       var infoWindow = new google.maps.InfoWindow({map: map});
+       function marker (lat, lng, title, content) {
+         var myLatLng = {lat: lat, lng: lng };
+         var contentString = '<div id="content">'+
+         '<div id="siteNotice">'+
+         '</div>'+
+         '<h1 id="firstHeading" class="firstHeading">'+
+         title +
+         '</h1>'+
+         '<div id="bodyContent">'+
+         '<p>'+
+         content +
+         '</p>'+
+         '</div>'+
+         '</div>';
+         var infowindow = new google.maps.InfoWindow({
+           content: contentString
+         });
+         //
+         var marker = new google.maps.Marker({
+           position: myLatLng,
+           map: map,
+         });
+         marker.addListener('click', function() {
+           infowindow.open(map, marker);
+         });
+       }
+       // Try HTML5 geolocation.
+       if (navigator.geolocation) {
+         navigator.geolocation.getCurrentPosition(function(position) {
+           var pos = {
+             lat: position.coords.latitude,
+             lng: position.coords.longitude
+           };
+           infoWindow.setPosition(pos);
+           infoWindow.setContent('You and your dog are here!');
+           map.setCenter(pos);
+      <% Business.all.each do |business| %>
+          marker(<%=business.latitude%> , <%=business.longitude%> , '<%=business.business_name%>' , '<%=business.business_address%>');
 
-      function initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 14
-        });
-        var infoWindow = new google.maps.InfoWindow({map: map});
-
-        function marker (lat, lng) {
-          var myLatLng = {lat: lat, lng: lng };
-          var marker = new google.maps.Marker({
-            position: myLatLng,
-            map: map,
-          });
-
-        }
-
-        // Try HTML5 geolocation.
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(function(position) {
-            var pos = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
-            };
-
-            infoWindow.setPosition(pos);
-            infoWindow.setContent('You and your dog are here!');
-            map.setCenter(pos);
-
-       <% Business.all.each do |business| %>
-          marker(<%=business.latitude%> , <%=business.longitude%>);
-      <% end %>
-
-          }, function() {
-            handleLocationError(true, infoWindow, map.getCenter());
-          });
-        } else {
-          // Browser doesn't support Geolocation
-          handleLocationError(false, infoWindow, map.getCenter());
-        }
-      }
-
-      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-        infoWindow.setPosition(pos);
-        infoWindow.setContent(browserHasGeolocation ?
-                              'Error: The Geolocation service failed.' :
-                              'Error: Your browser doesn\'t support geolocation.');
-      }
-    </script>
-    <%# raise Rails.application.secrets.google_maps_api_key %>
-    <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.secrets.google_maps_api_key %>&callback=initMap">
-      <%= puts "My key --->#{Rails.application.secrets.google_maps_api_key}<---" %>
-      </script>
-      </body>
+     <% end %>
+         }, function() {
+           handleLocationError(true, infoWindow, map.getCenter());
+         });
+       } else {
+         // Browser doesn't support Geolocation
+         handleLocationError(false, infoWindow, map.getCenter());
+       }
+     }
+     function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+       infoWindow.setPosition(pos);
+       infoWindow.setContent(browserHasGeolocation ?
+                             'Error: The Geolocation service failed.' :
+                             'Error: Your browser doesn\'t support geolocation.');
+     }
+   </script>
+   <%# raise Rails.application.secrets.google_maps_api_key %>
+   <script async defer
+     src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.secrets.google_maps_api_key %>&callback=initMap">
+     <%= puts "My key --->#{Rails.application.secrets.google_maps_api_key}<---" %>
+     </script>
+     </body>
 </html>
