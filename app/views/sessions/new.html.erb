@@ -1,55 +1,32 @@
-<br>
-<br>
-<br>
+
+<body class="sign-up">
+  <div class="sign-up-form">
+    <h3>Log In!</h3>
+    <br>
+
+    <body class="image">
+
+    <%= form_tag sessions_path do %>
 
 
+      <div class="field">
+        <%= label_tag :email %> <br>
+        <%= text_field_tag :email, params[:email] %>
+      </div> <br>
+      <div class="field">
+        <%= label_tag :password %><br />
+      <%= password_field_tag :password %>
+      </div><br>
 
 
-<div class="centered_50">
-<h1>Log in</h1>
-  <%= form_tag sessions_path do %>
-  <table class="centered_50">
+      <div class="actions">
+        <%= submit_tag 'Create User', :class => 'submitting'%>
+        <% end %>
 
-    <tr>
-      <td>
-          <%= label_tag :email %><br />
-      </td>
-      <td>
-          <%= text_field_tag :email, params[:email] %>
-      </td>
-    </tr>
+      </div>
 
-      <tr>
-        <td>
-            <%= label_tag :password %><br />
-        </td>
-        <td>
-            <%= password_field_tag :password %>
-        </td>
-      </tr>
+    </body>
+  </div>
+  <img class="arrow"></img>
 
-  </table>
-
-<div class="text_align">
-    <%= submit_tag " Log in", class: 'button align' %>
-</div>
-
-  <% end %>
-
-
-</div>
-
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+</body>

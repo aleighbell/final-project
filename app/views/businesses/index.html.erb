@@ -1,81 +1,90 @@
 
-<h1 class="center"> List of Businesses </h1>
-
-<br>
-<br>
-<div class="centered">
-  <%= button_to 'Add New Business', new_business_path, method: "get", class: 'viewbutton' %>
-</div>
-
-<div class="centered">
+<div class="form_text">
 
 
-<% @business.each do |business| %>
+
+  <h1 class="center "> List of Businesses </h1>
+
+  <br>
+  <br>
+  <div class="centered ">
+    <%= button_to 'Add New Business', new_business_path, method: "get", class: 'viewbutton' %>
+  </div>
+
+  <div class="centered">
 
 
- <div class="">
-  <table class="business_list">
+  <% @business.each do |business| %>
+
+
+   <div class=" ">
+    <table class="business_list">
+      <tr>
+        <td class="row1 ">
+          Business Name
+        </td>
+        <td class="row2 ">
+          <%= business.business_name %>
+        </td>
+
+      <% if current_user %>
+          <% if Favourite.where(user_id: current_user, business_id: business.id).last != nil%>
+          <% getrid = Favourite.where(user_id: current_user, business_id: business.id).last.id %>
+          <% end %>
+
+            <% if Favourite.where(user_id: current_user, business_id: business.id).last == ''%>
+            <td  rowspan="3" data-to-delete= '<%= getrid %>'  data-user= "<%=current_user.id %>" data-bus= "<%= business.id%>" class="empty_heart">
+
+            <% elsif Favourite.where(user_id: current_user, business_id: business.id).last == nil%>
+            <td rowspan="3" data-to-delete= ''  data-user= "<%=current_user.id %>" data-bus= "<%= business.id%>" class="empty_heart">
+
+            <% else %>
+            <td rowspan="3" data-to-delete= '<%= getrid %>'  data-user= "<%=current_user.id %>" data-bus= "<%= business.id%>" class="full_heart">
+            <%end %>
+        <% else %>
+      <% end %>
+
+      </td>
+
+      </tr>
     <tr>
-      <td class="row1">
-        Business Name
+      <td class="row1 ">
+        Address
       </td>
-      <td class="row2">
-        <%= business.business_name %>
+      <td class="row2 ">
+      <%=   business.business_address %>
       </td>
-
-    <% if Favourite.where(user_id: current_user, business_id: business.id).last != nil%>
-    <% getrid = Favourite.where(user_id: current_user, business_id: business.id).last.id %>
-    <% end %>
-
-      <% if Favourite.where(user_id: current_user, business_id: business.id).last == ''%>
-      <td  rowspan="3" data-to-delete= '<%= getrid %>'  data-user= "<%=current_user.id %>" data-bus= "<%= business.id%>" class="empty_heart">
-
-      <% elsif Favourite.where(user_id: current_user, business_id: business.id).last == nil%>
-      <td rowspan="3" data-to-delete= ''  data-user= "<%=current_user.id %>" data-bus= "<%= business.id%>" class="empty_heart">
-
-      <% else %>
-      <td rowspan="3" data-to-delete= '<%= getrid %>'  data-user= "<%=current_user.id %>" data-bus= "<%= business.id%>" class="full_heart">
-      <%end %>
-
-
-    </td>
-
     </tr>
-  <tr>
-    <td class="row1">
-      Address
-    </td>
-    <td class="row2">
-    <%=   business.business_address %>
-    </td>
-  </tr>
 
-  <tr>
-    <td class="row1">
-      City
-    </td>
-    <td>
-    <%#=   business.city.city_name %> Toronto
-    </td>
-  </tr>
+    <tr>
+      <td class="row1 ">
+        City
+      </td>
+      <td class="">
+      <%#=   business.city.city_name %> Toronto
+      </td>
+    </tr>
 
 
 
 
-  <tr>
-    <td rowspan= '3'>
-<%= button_to 'View ', { action: "show", id: business.id  }, method: "get", class: 'viewbutton' %>
-    </td>
-  </tr>
-<br>
-  </table>
-<br>
-<br>
+    <tr>
+      <td rowspan= '3'>
+  <%= button_to 'View ', { action: "show", id: business.id  }, method: "get", class: 'viewbutton ' %>
+      </td>
+    </tr>
+  <br>
+    </table>
+  <br>
+  <br>
 
- </div>
-<% end %>
+   </div>
+  <% end %>
+
+  </div>
+
+
+  <%= paginate @business%>
+
 
 </div>
-
-
-<%= paginate @business%>

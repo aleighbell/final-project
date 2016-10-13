@@ -6,6 +6,10 @@ class BusinessesController < ApplicationController
 
   end
 
+  def test
+    @user = User.new
+  end
+
   def contact_us
 
   end

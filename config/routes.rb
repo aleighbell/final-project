@@ -9,6 +9,7 @@ post 'contact-us' => 'pages#contact_save'
 get 'contact-us' => 'pages#contact_us'
 get 'about_us' => 'pages#about_us'
 get 'business' => 'pages#business'
+get 'test' => 'businesses#test'
 #get 'signup' => 'pages#signup'
 
 resources :businesses

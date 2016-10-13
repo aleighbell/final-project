@@ -1,6 +1,11 @@
 
 /*logo*/
 
+*{
+  font-family: 'nexa bold';
+  src: url(/assets/fonts/nexa_bold.otf) format("truetype");
+}
+
 #pages-index  {
   background-image: url('IMG_1307.JPG');
   background-size: 2000px
@@ -35,12 +40,15 @@
 .logo {
     background-color: ##D3D3D3	;
     text-align: center;
+
 }
 
 .logoimage{
-  max-width:180px;
+  max-width:130px;
   padding-top: 10px;
   margin-bottom: -20px;
+  position: relative;
+  top: -35px;
 }
 
 .slogan {
@@ -52,12 +60,43 @@
 }
 /*nav bar*/
 
+
+.nav_top{
+  padding: 2px 0;
+  margin: 20px 0 0;
+  background-color: transparent	;
+}
+
+.nav_top ul {
+  list-style: none;
+  margin: 0 10px;
+  padding: 0;
+}
+
+.nav_top li {
+  display: inline-block;
+}
+
+.nav_top a {
+  font-weight: 500;
+  padding: 15px 10px;
+  color: 	rgb(255,215,0);
+  text-decoration: none;
+}
+
+a.nav_top:hover {
+  color: rgb(193, 191, 24)
+}
+
 nav {
   text-align: center;
   padding: 2px 0;
   margin: 20px 0 0;
-  background-color: transparent;	;
+  background-color: transparent	;
+  position: relative;
+  top: -36;
 }
+
 
 nav ul {
   list-style: none;
@@ -77,7 +116,7 @@ nav a {
 }
 
 a.nav:hover {
-  color: #0934F4;
+  color: red;
 }
 
 /*footer*/
@@ -374,8 +413,9 @@ display: block;
 }
 
 .centered{
-  width: 80%;
-left: 11%;
+  width: 100%;
+  margin 0;
+  text-align: center;
 }
 
 .business_list{
@@ -395,6 +435,79 @@ left: 11%;
 
 }
 
+.yellow{
+background-color: yellow;
+}
+
+.header{
+  background-color: rgb(29, 20, 3);
+  color: 	rgb(255,215,0);
+}
+
+.small_bar{
+  background-color: rgb(35, 24, 1);
+  width: 100%;
+  height: 4px;
+}
+
+body{
+  background-image: url(header3.jpg);
+  background-size: contain;
+  width: 100%;
+  height: 800px;
+  background-repeat: repeat;
+}
+
+.brown_background{
+
+  background-color: rgb(59, 43, 7)
+}
+
+
+
+
+.line{
+  display: block;
+  overflow: hidden;
+  position: relative;
+
+}
+
+.float_left{
+  float: left;
+}
+.overflow{
+  overflow: hidden;
+}
+
 .center{
+  width: 80%;
+  text-align: center;
+  margin: auto;
+}
+
+.c_gold{
+  color: 	rgb(255,215,0);
+}
+
+.small_logo{
+  width: 25px;
+  height: 20px;
+  float: right;
+  position: relative;
+  padding: 4px;
+  top: -20px;
+  left: -20px;
+}
+
+.form_text{
+  font-family: 'Open Sans', sans-serif;
+  margin:auto;
+  margin-top: 8%;
+  margin-bottom: 70px;
+  width: 90%;
+  padding: 50px 30px;
+  background-color:oldlace;
+
 
 }
