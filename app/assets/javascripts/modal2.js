@@ -65,6 +65,14 @@ $('.submit').on('click', function(eventobject) {
   }
 );
 
+$( "a, .navtop" ).hover(
+function() {
+    $(this).css({"color":"rgb(193, 191, 24)"});
+}, function() {
+    $(this).css({"color":"rgb(255,215,0)"});
+}
+);
+
 // change hearts
 
 
