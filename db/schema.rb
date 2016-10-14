@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160926204452) do
+ActiveRecord::Schema.define(version: 20161003200705) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,10 +20,10 @@ ActiveRecord::Schema.define(version: 20160926204452) do
     t.string   "business_name"
     t.text     "business_address"
     t.integer  "city_id"
-    t.float    "latitude"
-    t.float    "longitude"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -33,11 +33,9 @@ ActiveRecord::Schema.define(version: 20160926204452) do
   end
 
   create_table "cities", force: :cascade do |t|
-    t.string   "city_name"
-    t.integer  "business_id"
-    t.integer  "category_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "city"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "contactus", force: :cascade do |t|
@@ -54,21 +52,22 @@ ActiveRecord::Schema.define(version: 20160926204452) do
 
   create_table "favourites", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "business_id"
-    t.integer  "city_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "business_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email"
+    t.string   "email",                        null: false
     t.string   "crypted_password"
     t.string   "salt"
     t.string   "name"
-    t.string   "password_hash"
-    t.string   "password"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "remember_me_token"
+    t.datetime "remember_me_token_expires_at"
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["remember_me_token"], name: "index_users_on_remember_me_token", using: :btree
   end
 
 end
