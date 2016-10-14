@@ -1,5 +1,4 @@
 
-
    <div class = "centered" id="map"></div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
    <script>
@@ -22,10 +21,15 @@
          content +
          '</p>'+
          '<p>'+
-         url +
+          '<a href ="' + url + '">' + url + '</a> ' +
          '</P>' +
          '</div>'+
          '</div>';
+
+
+        //  <a href="slkdjfsdfkj">sss</a>
+
+
          var infowindow = new google.maps.InfoWindow({
            content: contentString
          });
