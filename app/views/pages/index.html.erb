@@ -5,11 +5,11 @@
    <script>
      function initMap() {
        var map = new google.maps.Map(document.getElementById('map'), {
-         center: {lat: -34.397, lng: 150.644},
+         center: {lat: -43.653, lng: 79.383},
          zoom: 14
        });
        var infoWindow = new google.maps.InfoWindow({map: map});
-       function marker (lat, lng, title, content) {
+       function createMarker (lat, lng, title, content, url) {
          var myLatLng = {lat: lat, lng: lng };
          var contentString = '<div id="content">'+
          '<div id="siteNotice">'+
@@ -21,6 +21,9 @@
          '<p>'+
          content +
          '</p>'+
+         '<p>'+
+         url +
+         '</P>' +
          '</div>'+
          '</div>';
          var infowindow = new google.maps.InfoWindow({
@@ -46,7 +49,7 @@
            infoWindow.setContent('You and your dog are here!');
            map.setCenter(pos);
       <% Business.all.each do |business| %>
-          marker(<%=business.latitude%> , <%=business.longitude%> , '<%=business.business_name%>' , '<%=business.business_address%>');
+          createMarker(<%=business.latitude%> , <%=business.longitude%> , '<%=business.business_name%>' , '<%=business.business_address%>' , '<%=business.url%>');
 
      <% end %>
          }, function() {
