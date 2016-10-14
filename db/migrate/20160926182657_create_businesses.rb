@@ -4,9 +4,10 @@ class CreateBusinesses < ActiveRecord::Migration[5.0]
       t.integer :category_id
       t.string :business_name
       t.text :business_address
+      t.string :url
       t.integer :city_id
       t.float :latitude
-      t.float :longitude  
+      t.float :longitude
       t.timestamps
     end
   end

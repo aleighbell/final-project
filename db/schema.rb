@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20160926204452) do
     t.integer  "category_id"
     t.string   "business_name"
     t.text     "business_address"
+    t.string   "url"
     t.integer  "city_id"
     t.float    "latitude"
     t.float    "longitude"
