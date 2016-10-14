@@ -2,8 +2,9 @@ class AdminMailer < ActionMailer::Base
 
 	def business_details(business)
 	    @business = business
-	    @admin_email  = 'darr.dv@gmail.com'
-	    mail(to: @admin_email, subject: 'New Business')
+	    @from = 'friendlyrobotatbestfriendly.ca'
+	    @admin_email  = 'myemailatbestfriendly.ca'
+	    mail(from: @from, to: @admin_email, subject: 'New Business Submission')
   	end
 
 end
