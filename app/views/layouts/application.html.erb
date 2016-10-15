@@ -23,34 +23,29 @@
 
   <div class="">
     <ul>
-      <li class = 'nav'><%= link_to "Home", "/" %></li>
-      <li class='nav'><%= link_to "About Us", about_us_path %> </li>
-      <li class = 'nav'><%= link_to "Contact Us", "contact_us", id:"contact-link" %></li>
+      <li class = 'nav hover'><%= link_to "Home", "/" %></li>
+      <li class='nav hover'><%= link_to "About Us", about_us_path %> </li>
+      <li class = 'nav hover'><%= link_to "Contact Us", contact_us_path, id:"contact-link" %></li>
       </ul>
   </div>
   <div class="upper_right">
-  <%= image_tag('t', class: 'small_logo')  %><%= image_tag('g', class: 'small_logo')  %><%= image_tag('fb',  class: 'small_logo')  %>
-
+  <%= image_tag('t', class: 'small_logo ')  %><%= image_tag('g', class: 'small_logo')  %><%= image_tag('fb',  class: 'small_logo')  %>
   </div>
-
-
-
-
 </div>
 <div class="center">
-  <a href="index.html"><%=image_tag"logo2.png", class:"logoimage" %></a>
+<%=image_tag"logo2.png", class:"logoimage" %>
   <div class="nav_top">
     <nav>
       <ul>
-        <li class = 'nav'><%= link_to "Map", "/" %></li>
-        <li class = 'nav'><%= link_to "Business List", businesses_path%></li>
-       <li class='nav'><%= link_to "Offleash Toronto", offleash_toronto_path %></li>
+        <li class = 'nav hover'><%= link_to "Map", "/" %></li>
+        <li class = 'nav hover'><%= link_to "Business List", businesses_path%></li>
+       <li class='nav hover'><%= link_to "Offleash Toronto", offleash_toronto_path %></li>
         <% if current_user %>
-            <li class='nav'><span class="c_gold">Logged in as: <%= current_user.name %></span></li>
-            <li class='nav'><%= link_to 'Log Out', log_out_path %></li>
+            <li class='nav hover'><span class="c_gold">Logged in as: <%= current_user.name %></span></li>
+            <li class='nav hover'><%= link_to 'Log Out', log_out_path %></li>
             <% else %>
-            <li class='nav'>  <%= link_to "Sign up", sign_up_path %> </li>
-            <li class='nav'>  <%= link_to "Log in", log_in_path %></li>
+            <li class='nav hover'>  <%= link_to "Sign up", sign_up_path %> </li>
+            <li class='nav hover'>  <%= link_to "Log in", log_in_path %></li>
             <% end %>
         </ul>
     </nav>

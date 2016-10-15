@@ -1,19 +1,4 @@
-<head>
-   <title>Geolocation</title>
-   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-   <meta charset="utf-8">
-   <style>
-     html, body {
-       height: 100%;
-       margin: 0;
-       padding: 0;
-     }
-     #map {
-       height: 100%;
-     }
-   </style>
- </head>
- <body><br><br>
+
    <div class = "centered" id="map"></div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
    <script>
@@ -36,10 +21,15 @@
          content +
          '</p>'+
          '<p>'+
-         url +
+          '<a href ="' + url + '">' + url + '</a> ' +
          '</P>' +
          '</div>'+
          '</div>';
+
+
+        //  <a href="slkdjfsdfkj">sss</a>
+
+
          var infowindow = new google.maps.InfoWindow({
            content: contentString
          });
@@ -86,5 +76,3 @@
      src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.secrets.google_maps_api_key %>&callback=initMap">
      <%= puts "My key --->#{Rails.application.secrets.google_maps_api_key}<---" %>
      </script>
-     </body>
-</html>

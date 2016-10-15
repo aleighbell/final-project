@@ -70,7 +70,11 @@
 
     <tr>
       <td rowspan= '3'>
-  <%= button_to 'View ', { action: "show", id: business.id  }, method: "get", class: 'viewbutton ' %>
+
+<br>
+  <%= link_to 'View', business.url,  :target => "_blank", class: 'button' %>
+
+
       </td>
     </tr>
   <br>
