@@ -2,16 +2,16 @@ $(document).on('turbolinks:load', function(){
 
 //contact us modal
 
-  $('#contact-link').on('click', function(eventobject) {
-    eventobject.preventDefault()
-    $('.modal').fadeIn('slow')
-  });
-
-  $('.close').on('click', function() {
-
-    $('.modal').fadeOut('slow')
-
-  });
+  // $('#contact-link').on('click', function(eventobject) {
+  //   eventobject.preventDefault()
+  //   $('.modal').fadeIn('slow')
+  // });
+  //
+  // $('.close').on('click', function() {
+  //
+  //   $('.modal').fadeOut('slow')
+  //
+  // });
 
 // sign in sign up modal
   $('#signin-link').on('click', function(eventobject) {
@@ -57,15 +57,15 @@ $('.submit').on('click', function(eventobject) {
   // }
   // });
 
-  $( "a, .dropbtn" ).hover(
-  function() {
-      $(this).css({"color":"grey"});
-  }, function() {
-      $(this).css({"color":"black"});
-  }
-);
+//   $( "a, .dropbtn" ).hover(
+//   function() {
+//       $(this).css({"color":"grey"});
+//   }, function() {
+//       $(this).css({"color":"black"});
+//   }
+// );
 
-$( "a, .navtop" ).hover(
+$( "li.hover" ).children().hover(
 function() {
     $(this).css({"color":"rgb(193, 191, 24)"});
 }, function() {
