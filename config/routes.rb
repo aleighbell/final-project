@@ -4,6 +4,7 @@ resources :users, only: [:new, :create]
 resources :sessions, only: [:new, :create, :destroy]
 
 root 'pages#index'
+get 'trail_calculator' => 'pages#trail_calculator'
 get 'welcome' => 'pages#index'
 post 'contact-us' => 'pages#contact_save'
 get 'contact-us' => 'pages#contact_us'
