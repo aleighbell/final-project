@@ -7,7 +7,7 @@ $(document).ready(function () {
 
       $("#calculate_perimeter_dog").on("click", function () {
 
-        given_scale = .003;
+        given_scale = .002;
         var a0 = $("#a0").val();
         var b0 = $("#b0").val();
         var a1 = $("#a1").val();
@@ -154,27 +154,7 @@ $(document).ready(function () {
 
       });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       $("#calculate_perimeter_human").on("click", function () {
-
         given_scale = .005;
         var a0 = $("#a0").val();
         var b0 = $("#b0").val();
@@ -329,7 +309,7 @@ $(document).ready(function () {
 
     $("#calculate_perimeter_ant").on("click", function () {
 
-      given_scale = .00025;
+      given_scale = .00002;
       var a0 = $("#a0").val();
       var b0 = $("#b0").val();
       var a1 = $("#a1").val();
