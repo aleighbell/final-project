@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>New Business Submission Request</h1>
+    <p>
+      Hi Allie, this is a new request for submission into the business index.
+    </p>
+    <br />
+    <p>
+      First Name: <%= @business.firstname %>
+    </p>
+    <p>
+      Last Name: <%= @business.lastname %>
+    </p>
+    <p>
+      Email: <%= @business.email %>
+    </p>
+    <p>
+      Business Name: <%= @business.businessname %>
+    </p>
+    <p>
+      Business Address: <%= @business.businessaddress %>
+    </p>
+     <p>
+      Message: 
+
+      <%= @business.message %>
+    </p>
+  </body>
+</html>
