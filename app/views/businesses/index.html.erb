@@ -7,9 +7,13 @@
 
   <br>
   <br>
-  <div class="centered ">
-    <%= button_to 'Add New Business', new_business_path, method: "get", class: 'viewbutton' %>
-  </div>
+
+<h2>Find nearby Businesses!</h2>
+<%= form_tag businesses_path, method: :get do %>
+   <%= text_field_tag :search_address, params[:search_address] %>
+   <%= submit_tag "Find!" %>
+<% end %>
+
 
   <div class="centered">
 
@@ -86,8 +90,10 @@
 
   </div>
 
-
+  <% if @business == Business.order("business_name").page(params[:page]).per(10) %>
   <%= paginate @business%>
-
-
+  <% else %>
+    <%= paginate @business2%>
+  
+  <% end %>
 </div>

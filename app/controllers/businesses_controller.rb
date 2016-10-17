@@ -1,9 +1,18 @@
 class BusinessesController < ApplicationController
 
   def index
-    @business = Business.all
-    @business = Business.order("business_name").page(params[:page]).per(10)
+   if params[:search_address]
+    #  @business = Business.all
+     @business = Business.near(params[:search_address])
+    #  @business2 = Business.near(params[:search_address]).page(params[:page]).per(10)
+     @business2 = Business.near(params[:search_address]).page(params[:page]).per(10)
+   else
 
+     @business = Business.all
+     @business = Business.order("business_name").page(params[:page]).per(10)
+    # raise "hell"
+   end
+ end
   end
 
   def test
@@ -41,5 +50,3 @@ class BusinessesController < ApplicationController
       render :new
     end
   end
-
- end

@@ -8,14 +8,25 @@ class PagesController < ApplicationController
     @contactus = Contactus.new
   end
 
-  def contact_save
-    @contactus = Contactus.new(contact_params)
-    if @contactus.save
-      redirect_to contact_us_url
+  #def contact_save
+  #  @contactus = Contactus.new(contact_params)
+  #  if @contactus.save
+  #    redirect_to contact_us_url
+  #  else
+  #    render :contact_us
+  #  end
+  #end
+
+def contact_save
+  @contactus = Contactus.new(contact_params)
+   if @contactus.save
+    AdminMailer.business_details(@contactus).deliver_later
+    SubmissionMailer.received(@contactus).deliver_later
+    redirect_to contact_us_url
     else
       render :contact_us
     end
-  end
+end
 
   def business
   end
