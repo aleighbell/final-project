@@ -19,5 +19,5 @@
 
 Ignore application configuration
 /config/locales/application.yml
-
+/config/secrets.yml
 .DS_Store
