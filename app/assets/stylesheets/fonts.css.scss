@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'crazy';
+    src: asset-url('crazy.ttf');
+    // src: asset-url('crazy.ttf?#iefix') format('embedded-opentype'),
+
+
+}
+
+
+@font-face {
+    font-family: 'nexa';
+    src: asset-url('nexa.otf');
+   src: asset-url('nexa.otf?#iefix') format('embedded-opentype'),
+    asset-url('nexa.otf') format('opentype')
+
+
+}

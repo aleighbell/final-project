@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function(){
+document.addEventListener("turbolinks:load", function(){
 
 //contact us modal
 
@@ -67,7 +67,7 @@ $('.submit').on('click', function(eventobject) {
 
 $( "li.hover" ).children().hover(
 function() {
-  
+
     $(this).css({"color":"rgb(193, 191, 24)"});
 }, function() {
     $(this).css({"color":"rgb(255,215,0)"});

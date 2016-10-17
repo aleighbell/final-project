@@ -1,9 +1,11 @@
 
 /*logo*/
 
+
+
 *{
-  font-family: 'nexa bold';
-  src: url(/assets/fonts/nexa_bold.otf) format("truetype");
+  font-family: 'nexa';
+
 }
 
 #pages-index  {
@@ -511,12 +513,4 @@ body{
   width: 90%;
   padding: 50px 30px;
   background-color:oldlace;
-
-
-}
-
-
-@font-face {
-  font-family: "Nexa";
-  src: url(app/assets/fonts/Nexa.otf) format("truetype");
 }
