@@ -61,7 +61,7 @@ $(document).ready(function () {
       console.log("less")
 
     }
-      else if (parseFloat(given_scale) > parseFloat(length) && (p + 1) <= 1) {
+      else if (parseFloat(given_scale) > parseFloat(length) && (p) <= 1) {
         found = true;
        var last_fd = $("#fdbox0").val();
        var the_last_scale = $("#a0").val();
