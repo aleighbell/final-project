@@ -12,7 +12,7 @@ var a = 2
        var td = 0;
 
        function calc2(){
-         console.log("you clicked calc2")
+        //  console.log("you clicked calc2")
              ta  = Number(document.getElementById("ta").value);
                tb  = Number(document.getElementById("tb").value);
                tc  = Number(document.getElementById("tc").value);
@@ -24,11 +24,11 @@ var a = 2
        }
 
 function calculate(a,b,c,d,e) {
-      console.log(a);
-      console.log(b);
-      console.log(c);
-      console.log(d);
-      console.log(e);
+      // console.log(a);
+      // console.log(b);
+      // console.log(c);
+      // console.log(d);
+      // console.log(e);
       ta  = Number(document.getElementById(a).value);
         tb  = Number(document.getElementById(b).value);
         tc  = Number(document.getElementById(c).value);
