@@ -1,9 +1,11 @@
 
 /*logo*/
 
+
+
 *{
   font-family: 'nexa bold';
-  src: url(/assets/fonts/nexa_bold.otf) format("truetype");
+
 }
 
 #pages-index  {
@@ -327,20 +329,22 @@ button.fbsubmit {
 
 /* Style the buttons that are used to open and close the accordion panel */
 button.accordion {
-    background-color: #eee;
+    background-color: rgba(160, 70, 15, 0.4);
     color: #444;
     cursor: pointer;
     padding: 18px;
     width: 33.333%;
     text-align: center;
-    border: none;
+    border:
     outline: none;
     transition: 0.4s;
+
+    border-style: outset;
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 button.accordion.active, button.accordion:hover {
-    background-color: #ddd;
+    background-color: rgba(200, 149, 117, 0.4);
 }
 
 /* Style the accordion panel. Note: hidden by default */
@@ -509,12 +513,4 @@ body{
   width: 90%;
   padding: 50px 30px;
   background-color:oldlace;
-
-
-}
-
-
-@font-face {
-  font-family: "Nexa";
-  src: url(app/assets/fonts/Nexa.otf) format("truetype");
 }

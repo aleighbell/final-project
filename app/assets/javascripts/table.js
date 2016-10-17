@@ -1,4 +1,17 @@
+document.addEventListener("turbolinks:load", function(){
+
 $(document).ready(function () {
+
+
+
+
+
+
+
+
+
+
+
 
   p = 0;
   found = false;
@@ -670,8 +683,8 @@ $(document).ready(function () {
     });
 
 
-});
 
+});
 function calculateRow(row) {
     var price = +row.find('input[name^="price"]').val();
 }
@@ -683,3 +696,7 @@ function calculateGrandTotal() {
     });
     $("#grandtotal").text(grandTotal.toFixed(2));
 }
+
+
+
+ });

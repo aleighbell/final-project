@@ -20,7 +20,6 @@ class BusinessesController < ApplicationController
   end
 
   def contact_us
-
   end
 
   def business_params
