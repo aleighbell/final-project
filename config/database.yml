@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: bestfriendly_production
-  username: bestfriendly
-  password: <%= ENV['BESTFRIENDLY_DATABASE_PASSWORD'] %>
+  database: bestfriendly_development
+  # username: bestfriendly
+  # password: <%= ENV['BESTFRIENDLY_DATABASE_PASSWORD'] %>
