@@ -1,0 +1,158 @@
+// Place all the styles related to the Fractal controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.iteration_field{
+  height: 30px;
+  width: 100px;
+
+}
+
+
+.centered{
+  margin: auto;
+  width: 80%;
+  text-align: center;
+  font-weight: bold;
+
+}
+
+.steps{
+
+  margin: auto;
+  width: 70%;
+}
+
+#tablediv{
+  margin: auto;
+  width: 587px;
+}
+
+.header{
+  font-family: "nexa light";
+  width: 100%;
+  text-align: center;
+
+
+}
+
+
+.text_box{
+  border-radius: 1px;
+  font-size: 15px;
+  padding: 5px 8px;
+  cursor: pointer;
+  color: black;
+  background-color: white;
+  font-family: 'Open Sans', sans-serif;
+  border: 0.2px solid #fff;
+  box-shadow: 2px 2px 5px #715916;
+  transition-duration: 0.5s;
+    // border-style: dotted;
+   width: 96%;
+}
+
+.name{
+   width: 25%;
+
+
+ // border-style: dotted;
+}
+.my_table_center{
+  margin:0px auto;
+text-align: -webkit-center;
+
+// border-style: dashed;
+}
+
+.my_table_center2{
+
+
+}
+
+
+.calc_text {
+  background-color: lightgrey;
+}
+
+.measurement{
+  font-size: 30px;
+  font-size: 1.5vw;
+  width: 23%;
+  text-align: center;
+}
+
+#addrow{
+  text-align: right;
+  // border-style: dotted;
+  position: relative;
+  left: 3%;
+  width: 10.5vw;
+  font-size: 1.5vw;
+  text-align: center;
+
+
+}
+
+.first_box{
+  width: 25%;
+}
+
+.scale_box{
+  background-color: white;
+ // border-style: dashed;
+ width: 12vw;
+}
+
+.button2{
+  //  border-style: dashed;
+  text-decoration:none;
+    border-radius: 1px;
+    font-size: 1vw;
+    padding: 5px 8px;
+    cursor: pointer;
+    color: black;
+    background-color: rgba(160, 70, 15, 0.4);
+    font-family: 'Open Sans', sans-serif;
+    border: 0.2px solid #fff;
+    box-shadow: 2px 2px 5px #715916;
+    transition-duration: 0.5s;
+}
+
+
+.name2{
+  font-size: 30px;
+  font-size: 1.5vw;
+  width: 14%;
+  text-align: center;
+ // border-style: dotted;
+}
+
+
+.text_box2{
+  border-radius: 1px;
+  font-size: 15px;
+  padding: 5px 8px;
+  cursor: pointer;
+  color: black;
+  background-color: white;
+  font-family: 'Open Sans', sans-serif;
+  border: 0.2px solid #fff;
+  box-shadow: 2px 2px 5px #715916;
+  transition-duration: 0.5s;
+    // border-style: dotted;
+   width: 10vw;
+}
+
+.britain{
+      width: 70%;
+}
+
+.example{
+  // border-style: dashed;
+  margin: auto;
+  width: 40%;
+  text-align: center;
+  font-weight: bold;
+}

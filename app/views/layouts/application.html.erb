@@ -40,6 +40,7 @@
         <li class = 'nav hover'><%= link_to "Map", "/" %></li>
         <li class = 'nav hover'><%= link_to "Business List", businesses_path%></li>
        <li class='nav hover'><%= link_to "Offleash Toronto", offleash_toronto_path %></li>
+       <li class='nav hover'><%= link_to "Trail Calculator", trail_calculator_path %></li>
         <% if current_user %>
             <li class='nav hover'><span class="c_gold">Logged in as: <%= current_user.name %></span></li>
             <li class='nav hover'><%= link_to 'Log Out', log_out_path %></li>
