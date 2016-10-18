@@ -40,7 +40,7 @@
 
 
 .logo {
-    background-color: ##D3D3D3	;
+    background-color: #D3D3D3	;
     text-align: center;
 
 }
@@ -335,7 +335,6 @@ button.accordion {
     padding: 18px;
     width: 33.333%;
     text-align: center;
-    border:
     outline: none;
     transition: 0.4s;
 
@@ -419,7 +418,7 @@ display: block;
 
 .centered{
   width: 100%;
-  margin 0;
+  margin: 0;
   text-align: center;
 }
 
